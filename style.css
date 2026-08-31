@@ -1,26 +1,21 @@
-/* ═══════════════════════════════════════════════════
-   ImmoMind – Shared Stylesheet (Legal Pages)
-   ═══════════════════════════════════════════════════ */
 
-/* ─── VARIABLES ─── */
+
 :root {
-    --primary:        #0D9488;
-    --secondary:      #0f766e;
-    --accent:         #14B8A6;
-    --dark-bg:        #0F1419;
-    --dark-surface:   #141E26;
-    --dark-card:      #1a2530;
-    --dark-border:    rgba(13, 148, 136, 0.12);
-    --text-primary:   #ffffff;
-    --text-secondary: #94A3B8;
-    --text-muted:     #64748B;
-    --gradient-brand: linear-gradient(135deg, #0f766e, #0D9488, #14B8A6);
+    --primary:        #5EEAD4;
+    --secondary:      #0D9488;
+    --accent:         #2DD4BF;
+    --dark-bg:        #05130F;
+    --dark-surface:   #0A231D;
+    --dark-card:      #0A231D;
+    --dark-border:    rgba(94, 148, 136, 0.14);
+    --text-primary:   #E9F4F1;
+    --text-secondary: #93ABA5;
+    --text-muted:     #6B837E;
+    --gradient-brand: linear-gradient(135deg, #0D9488, #2DD4BF, #5EEAD4);
 }
 
-/* ─── RESET ─── */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
-/* ─── BASE ─── */
 html {
     scroll-behavior: smooth;
     scrollbar-width: thin;
@@ -28,7 +23,7 @@ html {
 }
 
 body {
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'Onest', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     background: var(--dark-bg);
     color: var(--text-primary);
     line-height: 1.7;
@@ -36,7 +31,6 @@ body {
     overflow-x: hidden;
 }
 
-/* ─── LAYOUT ─── */
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -49,7 +43,6 @@ body {
     padding: 0 2rem;
 }
 
-/* ─── UTILITIES ─── */
 .gradient-text {
     background: var(--gradient-brand);
     -webkit-background-clip: text;
@@ -57,7 +50,6 @@ body {
     background-clip: text;
 }
 
-/* ─── NAVIGATION ─── */
 nav {
     position: fixed;
     top: 0; left: 0; right: 0;
@@ -92,7 +84,7 @@ nav .container {
 }
 
 .nav-logo-text {
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'Onest', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     font-size: 1.1rem;
     font-weight: 700;
     letter-spacing: -0.02em;
@@ -100,7 +92,6 @@ nav .container {
 
 .nav-logo-text span { color: var(--primary); }
 
-/* ─── LEGAL PAGE ─── */
 .nav-back {
     display: inline-flex;
     align-items: center;
@@ -122,6 +113,7 @@ nav .container {
 }
 
 .page-header h1 {
+    font-family: 'Instrument Sans', 'Helvetica Neue', Arial, sans-serif;
     font-size: clamp(2rem, 4vw, 2.75rem);
     font-weight: 700;
     letter-spacing: -0.03em;
@@ -135,6 +127,7 @@ nav .container {
 .legal-section { margin-bottom: 2.5rem; }
 
 .legal-section h2 {
+    font-family: 'Instrument Sans', 'Helvetica Neue', Arial, sans-serif;
     font-size: 1.1rem;
     font-weight: 600;
     color: var(--primary);
@@ -187,7 +180,6 @@ nav .container {
 
 .legal-placeholder svg { width: 13px; height: 13px; }
 
-/* ─── FOOTER ─── */
 footer {
     border-top: 1px solid var(--dark-border);
     padding: 2rem 0;
@@ -238,7 +230,6 @@ footer {
 
 .footer-links a:hover { color: var(--text-primary); }
 
-/* ─── RESPONSIVE ─── */
 @media (max-width: 600px) {
     .container, .container-narrow { padding: 0 1.25rem; }
     .footer-content { flex-direction: column; align-items: flex-start; gap: 0.75rem; }

@@ -1,1109 +1,1204 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <title>ImmoMind</title>
-<meta name='robots' content='max-image-preview:large' />
-<link rel='dns-prefetch' href='//fonts.googleapis.com' />
-<link href='https://fonts.googleapis.com' rel='preconnect' />
-<link href='https://fonts.gstatic.com' crossorigin='1' rel='preconnect' />
-<link rel="alternate" type="application/rss+xml" title="ImmoMind &raquo; Feed" href="https://immomind.io/feed/" />
-<link rel="alternate" type="application/rss+xml" title="ImmoMind &raquo; Kommentar-Feed" href="https://immomind.io/comments/feed/" />
-<style id='wp-img-auto-sizes-contain-inline-css'>
-img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
-/*# sourceURL=wp-img-auto-sizes-contain-inline-css */
-</style>
-<style id='wp-emoji-styles-inline-css'>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ImmoMind — Immobilienverwaltung in einem System</title>
+<meta name="description" content="ImmoMind bündelt Objektverwaltung, Buchhaltung, Vorgänge und Portal in einer Plattform — vollständig integriert, ohne Schnittstellen. KI-Agenten übernehmen die Zuarbeit. DSGVO-konform, Daten in Deutschland.">
+<link rel="canonical" href="https://immomind.io/">
 
-	img.wp-smiley, img.emoji {
-		display: inline !important;
-		border: none !important;
-		box-shadow: none !important;
-		height: 1em !important;
-		width: 1em !important;
-		margin: 0 0.07em !important;
-		vertical-align: -0.1em !important;
-		background: none !important;
-		padding: 0 !important;
-	}
-/*# sourceURL=wp-emoji-styles-inline-css */
-</style>
-<style id='wp-block-library-inline-css'>
-:root{--wp-block-synced-color:#7a00df;--wp-block-synced-color--rgb:122,0,223;--wp-bound-block-color:var(--wp-block-synced-color);--wp-editor-canvas-background:#ddd;--wp-admin-theme-color:#007cba;--wp-admin-theme-color--rgb:0,124,186;--wp-admin-theme-color-darker-10:#006ba1;--wp-admin-theme-color-darker-10--rgb:0,107,160.5;--wp-admin-theme-color-darker-20:#005a87;--wp-admin-theme-color-darker-20--rgb:0,90,135;--wp-admin-border-width-focus:2px}@media (min-resolution:192dpi){:root{--wp-admin-border-width-focus:1.5px}}.wp-element-button{cursor:pointer}:root .has-very-light-gray-background-color{background-color:#eee}:root .has-very-dark-gray-background-color{background-color:#313131}:root .has-very-light-gray-color{color:#eee}:root .has-very-dark-gray-color{color:#313131}:root .has-vivid-green-cyan-to-vivid-cyan-blue-gradient-background{background:linear-gradient(135deg,#00d084,#0693e3)}:root .has-purple-crush-gradient-background{background:linear-gradient(135deg,#34e2e4,#4721fb 50%,#ab1dfe)}:root .has-hazy-dawn-gradient-background{background:linear-gradient(135deg,#faaca8,#dad0ec)}:root .has-subdued-olive-gradient-background{background:linear-gradient(135deg,#fafae1,#67a671)}:root .has-atomic-cream-gradient-background{background:linear-gradient(135deg,#fdd79a,#004a59)}:root .has-nightshade-gradient-background{background:linear-gradient(135deg,#330968,#31cdcf)}:root .has-midnight-gradient-background{background:linear-gradient(135deg,#020381,#2874fc)}:root{--wp--preset--font-size--normal:16px;--wp--preset--font-size--huge:42px}.has-regular-font-size{font-size:1em}.has-larger-font-size{font-size:2.625em}.has-normal-font-size{font-size:var(--wp--preset--font-size--normal)}.has-huge-font-size{font-size:var(--wp--preset--font-size--huge)}.has-text-align-center{text-align:center}.has-text-align-left{text-align:left}.has-text-align-right{text-align:right}.has-fit-text{white-space:nowrap!important}#end-resizable-editor-section{display:none}.aligncenter{clear:both}.items-justified-left{justify-content:flex-start}.items-justified-center{justify-content:center}.items-justified-right{justify-content:flex-end}.items-justified-space-between{justify-content:space-between}.screen-reader-text{border:0;clip-path:inset(50%);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px;word-wrap:normal!important}.screen-reader-text:focus{background-color:#ddd;clip-path:none;color:#444;display:block;font-size:1em;height:auto;left:5px;line-height:normal;padding:15px 23px 14px;text-decoration:none;top:5px;width:auto;z-index:100000}html :where(.has-border-color){border-style:solid}html :where([style*=border-top-color]){border-top-style:solid}html :where([style*=border-right-color]){border-right-style:solid}html :where([style*=border-bottom-color]){border-bottom-style:solid}html :where([style*=border-left-color]){border-left-style:solid}html :where([style*=border-width]){border-style:solid}html :where([style*=border-top-width]){border-top-style:solid}html :where([style*=border-right-width]){border-right-style:solid}html :where([style*=border-bottom-width]){border-bottom-style:solid}html :where([style*=border-left-width]){border-left-style:solid}html :where(img[class*=wp-image-]){height:auto;max-width:100%}:where(figure){margin:0 0 1em}html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:var(--wp-admin--admin-bar--height,0px)}@media screen and (max-width:600px){html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:0px}}
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ImmoMind">
+<meta property="og:locale" content="de_DE">
+<meta property="og:url" content="https://immomind.io/">
+<meta property="og:title" content="ImmoMind — Immobilienverwaltung in einem System">
+<meta property="og:description" content="ImmoMind bündelt Objektverwaltung, Buchhaltung, Vorgänge und Portal in einer Plattform — vollständig integriert, ohne Schnittstellen. KI-Agenten übernehmen die Zuarbeit. DSGVO-konform, Daten in Deutschland.">
+<meta property="og:image" content="https://immomind.io/icons/immomind-512x512.png">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#05130F">
 
-/*# sourceURL=wp-block-library-inline-css */
-</style>
-<style id='classic-theme-styles-inline-css'>
-/*! This file is auto-generated */
-.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
-/*# sourceURL=/wp-includes/css/classic-themes.min.css */
-</style>
-<style id='global-styles-inline-css'>
-:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--color--primary: #0D9488;--wp--preset--color--primary-light: #14B8A6;--wp--preset--color--dark-bg: #0F1419;--wp--preset--color--text-primary: #ffffff;--wp--preset--color--text-secondary: #94A3B8;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgb(6,147,227) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgb(252,185,0) 0%,rgb(255,105,0) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgb(255,105,0) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgb(255, 255, 255), 6px 6px rgb(0, 0, 0);--wp--preset--shadow--crisp: 6px 6px 0px rgb(0, 0, 0);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
-/*# sourceURL=global-styles-inline-css */
-</style>
+<link rel="icon" href="icons/favicon.ico" sizes="any">
+<link rel="icon" href="icons/immomind-32x32.png" type="image/png" sizes="32x32">
+<link rel="icon" href="icons/immomind-512x512.png" type="image/png" sizes="512x512">
+<link rel="apple-touch-icon" href="icons/immomind-512x512.png">
 
-<link rel='stylesheet' id='immomind-google-fonts-css' href='https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&#038;family=Playfair+Display:wght@500;600;700&#038;display=swap' media='all' />
-<link rel='stylesheet' id='immomind-style-css' href='https://immomind.io/wp-content/themes/immomind/style.css?ver=1.0.0' media='all' />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Onest:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+
 <style>
-    /* ─── CONTACT FORM ─── */
-    .immo-contact-form {
-        max-width: 560px;
-        margin: 0 auto;
-        position: relative;
-        z-index: 2;
-    }
-    .immo-contact-form .form-row {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 1rem;
-    }
-    .immo-contact-form .form-group {
-        margin-bottom: 1rem;
-    }
-    .immo-contact-form .form-group label {
-        display: block;
-        font-size: 0.8rem;
-        font-weight: 600;
-        color: #94A3B8;
-        margin-bottom: 0.4rem;
-        letter-spacing: 0.02em;
-    }
-    .immo-contact-form .form-group input,
-    .immo-contact-form .form-group textarea {
-        width: 100%;
-        padding: 0.8rem 1rem;
-        background: rgba(255, 255, 255, 0.04);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        border-radius: 10px;
-        color: #ffffff;
-        font-family: 'DM Sans', sans-serif;
-        font-size: 0.92rem;
-        transition: all 0.25s ease;
-        outline: none;
-        box-sizing: border-box;
-    }
-    .immo-contact-form .form-group input::placeholder,
-    .immo-contact-form .form-group textarea::placeholder {
-        color: rgba(148, 163, 184, 0.6);
-    }
-    .immo-contact-form .form-group input:focus,
-    .immo-contact-form .form-group textarea:focus {
-        border-color: #0D9488;
-        background: rgba(13, 148, 136, 0.06);
-        box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.15);
-    }
-    .immo-contact-form .form-group textarea {
-        min-height: 120px;
-        resize: vertical;
-        line-height: 1.6;
-    }
-    .immo-form-submit {
-        width: 100%;
-        margin-top: 0.5rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 0.5rem;
-        padding: 0.9rem 1.5rem;
-        background: #0D9488;
-        color: #ffffff;
-        border: none;
-        border-radius: 10px;
-        font-family: 'DM Sans', sans-serif;
-        font-size: 1rem;
-        font-weight: 600;
-        cursor: pointer;
-        transition: background 0.2s ease, transform 0.2s ease;
-    }
-    .immo-form-submit:hover {
-        background: #14B8A6;
-        transform: translateY(-2px);
-    }
-    .immo-form-submit:disabled {
-        opacity: 0.7;
-        cursor: not-allowed;
-        transform: none;
-    }
-    .immo-form-hint {
-        text-align: center;
-        font-size: 0.78rem;
-        color: rgba(148, 163, 184, 0.7);
-        margin-top: 1rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 0.3rem;
-    }
-    .immo-form-hint svg {
-        width: 13px;
-        height: 13px;
-        flex-shrink: 0;
-        color: #0D9488;
-    }
-    /* Success State */
-    .immo-form-success {
-        display: none;
-        text-align: center;
-        padding: 2rem 0;
-    }
-    .immo-form-success.show {
-        display: block;
-        animation: immoFadeUp 0.5s ease both;
-    }
-    @keyframes immoFadeUp {
-        from { opacity: 0; transform: translateY(16px); }
-        to   { opacity: 1; transform: translateY(0); }
-    }
-    .immo-form-success-icon {
-        width: 64px;
-        height: 64px;
-        background: rgba(13, 148, 136, 0.1);
-        border: 1.5px solid rgba(13, 148, 136, 0.3);
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 0 auto 1.25rem;
-    }
-    .immo-form-success-icon svg {
-        width: 28px;
-        height: 28px;
-        color: #0D9488;
-    }
-    .immo-form-success h3 {
-        font-size: 1.25rem;
-        font-weight: 600;
-        margin-bottom: 0.5rem;
-        color: #ffffff;
-    }
-    .immo-form-success p {
-        color: #94A3B8;
-        font-size: 0.95rem;
-    }
-    @media (max-width: 600px) {
-        .immo-contact-form .form-row {
-            grid-template-columns: 1fr;
-        }
-    }
-</style>
-<link rel="https://api.w.org/" href="https://immomind.io/wp-json/" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://immomind.io/xmlrpc.php?rsd" />
-<meta name="generator" content="WordPress 6.9.1" />
-<link rel="icon" href="icons/favicon.ico" sizes="any" />
-<link rel="icon" href="icons/immomind-32x32.png" type="image/png" sizes="32x32" />
-<link rel="icon" href="icons/immomind-512x512.png" type="image/png" sizes="512x512" />
-<link rel="apple-touch-icon" href="icons/immomind-512x512.png" />
-<meta name="msapplication-TileImage" content="https://immomind.io/wp-content/uploads/2025/12/immomind-512x512-1-300x300.png" />
-</head>
-<body class="home blog wp-embed-responsive wp-theme-immomind front-page">
+:root {
+  --grund:       #05130F;
+  --grund-2:     #0A231D;
+  --flaeche:     rgba(255, 255, 255, 0.035);
+  --flaeche-2:   rgba(255, 255, 255, 0.06);
+  --kante:       rgba(94, 234, 212, 0.14);
+  --kante-hell:  rgba(94, 234, 212, 0.32);
+  --mint:        #5EEAD4;
+  --teal:        #0D9488;
+  --teal-dunkel: #076A60;
+  --text:        #E9F4F1;
+  --text-weich:  #93ABA5;
+  --text-still:  #6B837E;
+  --bernstein:   #FBBF24;
+  --hell:        #F4F8F7;
+  --hell-karte:  #FFFFFF;
+  --tinte:       #05130F;
+  --tinte-weich: #4C6560;
+  --linie-hell:  #D7E2DF;
 
-<!-- Background Effects -->
-<div class="bg-pattern"></div>
-<div class="grid-overlay"></div>
+  --display: "Instrument Sans", "Helvetica Neue", Arial, sans-serif;
+  --body:    "Onest", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --mono:    "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
 
-<!-- Header -->
-<header id="header" class="site-header">
-    <nav class="main-navigation">
-        <a href="https://immomind.io/" class="logo site-branding">
-            <div class="logo-icon">
-                <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
-            <rect width="48" height="48" rx="12" fill="#0D9488"/>
-            <rect x="10" y="13" width="7" height="22" rx="2" fill="white"/>
-            <path d="M22 13L28 19L34 13V35H28V25L22 31V35H22V13Z" fill="white" fill-rule="evenodd"/>
-        </svg>            </div>
-            <span class="logo-text site-title">Immo<span>Mind</span></span>
-        </a>
-        
-                    <ul class="nav-links">
-                <li><a href="#features">Funktionen</a></li>
-                <li><a href="#office">OfficeMind</a></li>
-                <li><a href="#finance">FinanceMind</a></li>
-                <li><a href="#landlord">Privatvermieter</a></li>
-                <li><a href="#pricing">Preise</a></li>
-            </ul>
-                
-        <div class="nav-buttons">
-                        <a href="#demo" class="btn btn-primary desktop-only">
-                Demo anfragen            </a>
-        </div>
-        
-        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menü">
-            <svg class="menu-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M3 12h18M3 6h18M3 18h18"/>
-            </svg>
-            <svg class="close-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M18 6L6 18M6 6l12 12"/>
-            </svg>
-        </button>
-    </nav>
-    
-    <!-- Mobile Menu -->
-    <div class="mobile-menu" id="mobileMenu">
-                    <ul class="mobile-nav-links">
-                <li><a href="#features">Features</a></li>
-                <li><a href="#office">OfficeMind</a></li>
-                <li><a href="#finance">FinanceMind</a></li>
-                <li><a href="#landlord">FinanceMind</a></li>
-                <li><a href="#pricing">Preise</a></li>
-            </ul>
-                <div class="mobile-nav-buttons">
-            <a href="#demo" class="btn btn-primary">
-                Demo anfragen            </a>
-        </div>
-    </div>
-</header>
-
-<main id="main" class="site-main">
-
-<!-- Hero Section -->
-<section class="hero">
-    <div class="hero-container">
-        <div class="hero-content">
-            <div class="hero-badge">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
-                </svg>
-                KI-gestützte Immobilienverwaltung            </div>
-            <h1>Immobilienmanagement <span>neu gedacht</span></h1>
-            <p class="hero-description">
-                Steigern Sie die Produktivität Ihres Teams und senken Sie ihre Personal- und IT-Kosten durch Automatisierung und Digitalisierung. Erhöhen Sie die Zufriedenheit Ihrer Eigentümer, Mieter und Ihres Teams durch verbesserte Kommunikation und bessere Prozesse.<br><br>ImmoMind ist die All-In-One-Lösung für die moderne Hausverwaltung und Privatvermieter. Verwalten Sie Immobilien, Verträge und Finanzen in einem intelligenten System – unterstützt von KI-Agenten.            </p>
-            <div class="hero-buttons">
-                <a href="#demo" class="btn btn-primary">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M5 12h14M12 5l7 7-7 7"/>
-                    </svg>
-                    Kostenlose Demo                </a>
-                <a href="#features" class="btn btn-secondary">Funktionen entdecken</a>
-            </div>
-            <div class="hero-stats">
-                <div class="stat">
-                    <div class="stat-value">100%</div>
-                    <div class="stat-label">Cloud-basiert</div>
-                </div>
-                <div class="stat">
-                    <div class="stat-value">24/7</div>
-                    <div class="stat-label">Verfügbarkeit</div>
-                </div>
-                <div class="stat">
-                    <div class="stat-value">DSGVO</div>
-                    <div class="stat-label">Konform</div>
-                </div>
-            </div>
-        </div>
-        <div class="hero-visual">
-            <div class="dashboard-preview">
-                <div class="dashboard-header">
-                    <div class="dashboard-dots">
-                        <div class="dashboard-dot"></div>
-                        <div class="dashboard-dot"></div>
-                        <div class="dashboard-dot"></div>
-                    </div>
-                    <div class="dashboard-title">ImmoMind SmartDesk</div>
-                </div>
-                <div class="dashboard-content">
-                    <div class="dash-card">
-                        <div class="dash-card-header">
-                            <span class="dash-card-title">LEERSTAND</span>
-                            <span class="dash-card-change">5%</span>
-                        </div>
-                        <div class="dash-card-value">2</div>
-                        <div class="mini-chart">
-                            <div class="chart-bar" style="height: 60%"></div>
-                            <div class="chart-bar" style="height: 45%"></div>
-                            <div class="chart-bar" style="height: 80%"></div>
-                            <div class="chart-bar" style="height: 65%"></div>
-                            <div class="chart-bar" style="height: 90%"></div>
-                            <div class="chart-bar" style="height: 75%"></div>
-                            <div class="chart-bar" style="height: 100%"></div>
-                        </div>
-                    </div>
-                    <div class="dash-card">
-                        <div class="dash-card-header">
-                            <span class="dash-card-title">Offene Aufgaben</span>
-                        </div>
-                        <div class="dash-card-value">23</div>
-                        <div class="mini-chart">
-                            <div class="chart-bar" style="height: 40%"></div>
-                            <div class="chart-bar" style="height: 70%"></div>
-                            <div class="chart-bar" style="height: 55%"></div>
-                            <div class="chart-bar" style="height: 30%"></div>
-                            <div class="chart-bar" style="height: 85%"></div>
-                            <div class="chart-bar" style="height: 60%"></div>
-                            <div class="chart-bar" style="height: 45%"></div>
-                        </div>
-                    </div>
-                    <div class="dash-card full">
-                        <div class="dash-card-header">
-                            <span class="dash-card-title">Aktuelle Aufgaben</span>
-                        </div>
-                        <div class="task-list">
-                            <div class="task-item">
-                                <span>Nebenkostenabrechnung 2024</span>
-                                <span class="task-badge pending">Dringend</span>
-                            </div>
-                            <div class="task-item">
-                                <span>Mietvertrag Müller prüfen</span>
-                                <span class="task-badge pending">KI-Analyse</span>
-                            </div>
-                            <div class="task-item">
-                                <span>Zählerstand erfasst</span>
-                                <span class="task-badge done">Erledigt</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Features Section -->
-<section id="features" class="module-section">
-    <div class="section-container">
-        <div class="section-header animate-on-scroll">
-            <span class="section-badge">Funktionen</span>
-            <h2>Alles in einem System</h2>
-            <p>Keine Schnittstellen zwischen ERP, Kundenkommunikation und Buchhaltung. ImmoMind vereint alle Funktionen einer modernen Hausverwaltung.</p>
-        </div>
-        <div class="features-grid">
-                        <div class="feature-card animate-on-scroll">
-                <div class="feature-icon">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>                    </svg>
-                </div>
-                <h4>Aufgaben- und Vorgangsmanagement</h4>
-                <p>Intelligente Agenten automatisieren Workflows und Business-Prozesse für maximale Effizienz.</p>
-            </div>
-                        <div class="feature-card animate-on-scroll">
-                <div class="feature-icon">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/>                    </svg>
-                </div>
-                <h4>Kundenkommunikation</h4>
-                <p>Proaktive Kommunikation mit Mietern und Dienstleistern über Email, WhatsApp oder andere Kanäle</p>
-            </div>
-                        <div class="feature-card animate-on-scroll">
-                <div class="feature-icon">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/>                    </svg>
-                </div>
-                <h4>Mieter-/Eigentümerportal</h4>
-                <p>Informieren Sie Ihre Mieter und Eigentümer proaktiv und nutzen Sie Selfservices um ihr Team zu entlasten.</p>
-            </div>
-                        <div class="feature-card animate-on-scroll">
-                <div class="feature-icon">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/>                    </svg>
-                </div>
-                <h4>Handwerker- und Hausmeisterportal</h4>
-                <p>Reparaturaufnahme, Auftragsbearbeitung, Wohnungsübergabe oder Zählerstände online bearbeiten.</p>
-            </div>
-                        <div class="feature-card animate-on-scroll">
-                <div class="feature-icon">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>                    </svg>
-                </div>
-                <h4>Objektverwaltung</h4>
-                <p>Verwalten Sie Objekte, Einheiten und technische Ausstattung zentral und übersichtlich.</p>
-            </div>
-                        <div class="feature-card animate-on-scroll">
-                <div class="feature-icon">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/>                    </svg>
-                </div>
-                <h4>Kontaktverwaltung</h4>
-                <p>Mieter, Eigentümer, Dienstleister und Partner – alle Kontakte an einem Ort.</p>
-            </div>
-                        <div class="feature-card animate-on-scroll">
-                <div class="feature-icon">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/>                    </svg>
-                </div>
-                <h4>Schlüsselverwaltung</h4>
-                <p>Lückenlose Dokumentation aller Schlüssel und deren Übergaben.</p>
-            </div>
-                        <div class="feature-card animate-on-scroll">
-                <div class="feature-icon">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <circle cx="12" cy="12" r="3"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>                    </svg>
-                </div>
-                <h4>Zählermanagement</h4>
-                <p>Erfassung und Verwaltung aller Zählerstände mit automatisierter Datenübernahme z.B. von Fotos.</p>
-            </div>
-                        <div class="feature-card animate-on-scroll">
-                <div class="feature-icon">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/>                    </svg>
-                </div>
-                <h4>Vertragsmanagement</h4>
-                <p>Digitale Vertragsakte mit automatisiertem Fristen- und Erinnerungsmanagement.</p>
-            </div>
-                        <div class="feature-card animate-on-scroll">
-                <div class="feature-icon">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M12 1v22M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/>                    </svg>
-                </div>
-                <h4>Buchhaltung</h4>
-                <p>Integrierte Mietbuchhaltung mit eBanking, Nebenkostenabrechnung und DATEV-Export.</p>
-            </div>
-                        <div class="feature-card animate-on-scroll">
-                <div class="feature-icon">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/>                    </svg>
-                </div>
-                <h4>KI-Agenten</h4>
-                <p>Intelligente Assistenten für Analyse, Kommunikation und automatisierte Prozesse.</p>
-            </div>
-                        <div class="feature-card animate-on-scroll">
-                <div class="feature-icon">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/>                    </svg>
-                </div>
-                <h4>Reporting &amp; Analysen</h4>
-                <p>Echtzeit-Dashboards und Berichte für fundierte Entscheidungen.</p>
-            </div>
-                    </div>
-    </div>
-</section>
-
-<!-- OfficeMind Section -->
-<section id="office" class="module-section">
-    <div class="section-container">
-        <div class="module-grid animate-on-scroll">
-            <div class="module-content">
-                <span class="section-badge">OfficeMind</span>
-                <h3>Vorgänge <span>intelligent bearbeiten</span></h3>
-                <p>Aufgaben und Vorgänge effektiv bearbeiten mit dem zentralen Vorgangsmanagement und integrierten KI-Agenten. Nachrichten und Ereignisse können voll- oder teilautomatisiert von KI-Assistenten bearbeitet werden wodurch Mitarbeiter mehr Zeit für die wesentlichen Aufgaben bekommen.</p>
-                <div class="module-features">
-                    <div class="module-feature">
-                        <div class="module-feature-icon">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="20 6 9 17 4 12"/>
-                            </svg>
-                        </div>
-                        <div>
-                            <h5>zentraler Nachrichteneingang</h5>
-                            <p>Emails, WhatsApps, Eingangspost und alle anderen Nachrichten werden im zentralen Posteingang erfasst und durch KI-Agenten für die weitere Bearbeitung vorqualifiziert.</p>
-                        </div>
-                    </div>
-                    <div class="module-feature">
-                        <div class="module-feature-icon">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="20 6 9 17 4 12"/>
-                            </svg>
-                        </div>
-                        <div>
-                            <h5>Vorgangsmanagement</h5>
-                            <p>Vorgänge können mittels KI oder manuell direkt aus dem Nachrichteneingang erzeugt und zugeordnet werden. Neue Inofs zu bestehenden Vorgängen werden automatisch dem jeweiligen Vorgang zugeordnet.</p>
-                        </div>
-                    </div>
-                    <div class="module-feature">
-                        <div class="module-feature-icon">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="20 6 9 17 4 12"/>
-                            </svg>
-                        </div>
-                        <div>
-                            <h5>Vorgangsbearbeitung</h5>
-                            <p>Die Vorgangsbearbeitung erlaubt es direkt aus der Maske Nachrichten an Kollegen, Hausmeister, Mieter oder andere Beteiligten zu versenden. Sämtliche Inforamtionen, Dokumenten und Aktivitäten können von hier verwaltet und gestuert werden.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="module-visual">
-                <div class="module-card">
-                    <div class="module-card-header">
-                        <div class="module-card-icon">
-                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
-                                <path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/>
-                            </svg>
-                        </div>
-                        <div>
-                            <div class="module-card-title">OfficeMind</div>
-                            <div class="module-card-subtitle">Alles an einem Ort</div>
-                        </div>
-                    </div>
-                    <div class="feature-list">
-                        <div class="feature-list-item">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="20 6 9 17 4 12"/>
-                            </svg>
-                            <span>zentrale Aufgaben- und Vorgangsübersicht</span>
-                        </div>
-                        <div class="feature-list-item">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="20 6 9 17 4 12"/>
-                            </svg>
-                            <span>Zusammenarbeit mit internen &amp; externen Beteiligten</span>
-                        </div>
-                        <div class="feature-list-item">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="20 6 9 17 4 12"/>
-                            </svg>
-                            <span>Status- und Terminüberwachung über alle Aufgaben und Teilaufgaben eines Vorgangs </span>
-                        </div>
-                        <div class="feature-list-item">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="20 6 9 17 4 12"/>
-                            </svg>
-                            <span>Nachrichtenversand an Mieter, Handwerker oder andere Kontakte über alle Kanäle</span>
-                        </div>
-                        <div class="feature-list-item">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="20 6 9 17 4 12"/>
-                            </svg>
-                            <span>Teil- oder Vollautomatisierung der Vorgangsbearbeitung durch KI-Agenten</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- FinanceMind Section -->
-<section id="finance" class="module-section">
-    <div class="section-container">
-        <div class="module-grid reverse animate-on-scroll">
-            <div class="module-content">
-                <span class="section-badge">FinanceMind</span>
-                <h3>Finanzen <span>im Griff</span></h3>
-                <p>Von eBankingoder Vertragsmanagement über Mietbuchhaltung bis zur automatisierten Nebenkostenabrechnung – FinanceMind bietet alle Finanzfunktionen für die professionelle Immobilienverwaltung.</p>
-                <div class="module-features">
-                    <div class="module-feature">
-                        <div class="module-feature-icon">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="20 6 9 17 4 12"/>
-                            </svg>
-                        </div>
-                        <div>
-                            <h5>eBanking (FinAPI)</h5>
-                            <p>Kontostände, Überweisungen, Lastschriften und Daueraufträge direkt im System.</p>
-                        </div>
-                    </div>
-                    <div class="module-feature">
-                        <div class="module-feature-icon">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="20 6 9 17 4 12"/>
-                            </svg>
-                        </div>
-                        <div>
-                            <h5>Mietbuchhaltung</h5>
-                            <p>KI-gestützte Buchung von Zahlungen, Forderungsmanagement und automatisiertes Mahnverfahren.</p>
-                        </div>
-                    </div>
-                    <div class="module-feature">
-                        <div class="module-feature-icon">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="20 6 9 17 4 12"/>
-                            </svg>
-                        </div>
-                        <div>
-                            <h5>Nebenkostenabrechnung</h5>
-                            <p>Automatische Berechnung nach Umlageschlüsseln mit KI-gestützter Belegerfassung.</p>
-                        </div>
-                    </div>
-                    <div class="module-feature">
-                        <div class="module-feature-icon">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="20 6 9 17 4 12"/>
-                            </svg>
-                        </div>
-                        <div>
-                            <h5>Vertragsmanagement</h5>
-                            <p>Verwatlzung von Miet-, Versorger-, Versicherungs- und weiteren Verträgen mit Fristenüberwachung.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="module-visual">
-                <div class="module-card">
-                    <div class="module-card-header">
-                        <div class="module-card-icon">
-                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M12 1v22M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/>
-                            </svg>
-                        </div>
-                        <div>
-                            <div class="module-card-title">FinanceMind</div>
-                            <div class="module-card-subtitle">Alle Finanzen im Überblick</div>
-                        </div>
-                    </div>
-                    <div class="feature-list">
-                        <div class="feature-list-item">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="20 6 9 17 4 12"/>
-                            </svg>
-                            <span>Automatische Kontosynchronisation und Zahlungsbuchung</span>
-                        </div>
-                        <div class="feature-list-item">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="20 6 9 17 4 12"/>
-                            </svg>
-                            <span>Vertragsmanagement</span>
-                        </div>
-                        <div class="feature-list-item">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="20 6 9 17 4 12"/>
-                            </svg>
-                            <span>Mieterportal für Abrechnungen</span>
-                        </div>
-                        <div class="feature-list-item">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="20 6 9 17 4 12"/>
-                            </svg>
-                            <span>Wirtschafts- &amp; Budgetplanung</span>
-                        </div>
-                        <div class="feature-list-item">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="20 6 9 17 4 12"/>
-                            </svg>
-                            <span>Detaillierte Berichte &amp; Analysen</span>
-                        </div>
-                        <div class="feature-list-item">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="20 6 9 17 4 12"/>
-                            </svg>
-                            <span>DATEV-Export und eBanking (FinAPI)</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Landlord Section -->
-<section id="landlord" class="module-section">
-    <div class="section-container">
-        <div class="module-grid animate-on-scroll">
-            <div class="module-content">
-                <span class="section-badge">Privatvermiter</span>
-                <h3>Immobilienmanagent inkl. <span>Familyoffice</span></h3>
-                <p>ImmoMind Private Edition bietet alle Funktionen zum Management des privaten Immobilienbestandes und unterstützt den Privatvermieter durch neueste intelligent eingesetzte KI-Agenten. Die Software ist offen gestaltet und kann neben der Verwaltung der eigenen Immobilien auch für das Management der Finanzen, von Verträgen und allen anderen Aufgaben im privaten Bereich genutzt werden.</p>
-                <div class="module-features">
-                    <div class="module-feature">
-                        <div class="module-feature-icon">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="20 6 9 17 4 12"/>
-                            </svg>
-                        </div>
-                        <div>
-                            <h5>Verwaltung aller Daten</Data>en</h5>
-                            <p>In ImmoMind können alle Daten zu Objekte, Einheiten, Stellplätzen, technsicher Ausstattung, Mietern und anderen Kontakten, Schlüsseln, Verträgen und vieles mehr verwaltet und ebarbeitet werden.</p>
-                        </div>
-                    </div>
-                    <div class="module-feature">
-                        <div class="module-feature-icon">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="20 6 9 17 4 12"/>
-                            </svg>
-                        </div>
-                        <div>
-                            <h5>Vorgangsmanagement</h5>
-                            <p> Das elektronische Vorgangsmanagement hilft Ihnen als Privatavermeiter alle Aufgaben zu planen, durchzuführen und zu dokumentieren. Dabei werden Sie von zahlreichen KI-Agenten und vordefinierten Prozessen bei der täglichen Arbeit unterstütz.</p>
-                        </div>
-                    </div>
-                    <div class="module-feature">
-                        <div class="module-feature-icon">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="20 6 9 17 4 12"/>
-                            </svg>
-                        </div>
-                        <div>
-                            <h5>Buchhaltung und Steuerberater</h5>
-                            <p>Die automatisierte Mietbuchhaltung überwacht selbstständig sämtliche Mietzahlungen und mahnt überfällkige Zahlungen an. Außerdem erstellt ImmomMind auftoamtisch die Anlage V - Daten mit dem Steuerbrater und der Datev können über SChnittstellen ausgetauscht werden.</p>
-                        </div>
-                    </div>
-                    <div class="module-feature">
-                        <div class="module-feature-icon">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="20 6 9 17 4 12"/>
-                            </svg>
-                        </div>
-                        <div>
-                            <h5>Vertragsmanagement</h5>
-                            <p>Das Vertragsmanagement von ImmoMind managed nicht nurt die Miet-, Versorger- oder Versicherungsverträge sondern auch alle anderen Arten von Verträgen. Neben der Überwachung von Fristen und Terminen unterstützt ImmoMind auch bei der Optimierung von Mieten.</p>
-                        </div>
-                    </div>
-                    <div class="module-feature">
-                        <div class="module-feature-icon">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="20 6 9 17 4 12"/>
-                            </svg>
-                        </div>
-                        <div>
-                            <h5>FamilyOffice</h5>
-                            <p>Alle Funktionen und Features von ImmoMind können auch für andere Aufgaben verwednet werden - mit dem Modul OfficeMind können so alle privaten Aufagben, Verträge oder Investements neben den eigenen Immobilien ebefalls gemanaget werden - also quasi die Software für das FamilyOffice.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="module-visual">
-                <div class="module-card">
-                    <div class="module-card-header">
-                        <div class="module-card-icon">
-                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
-                                <path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/>
-                            </svg>
-                        </div>
-                        <div>
-                            <div class="module-card-title">ImmoMind Private Edition</div>
-                            <div class="module-card-subtitle">Die konfortable Lösung für die private Immobilienverwaltung und mehr</div>
-                        </div>
-                    </div>
-                    <div class="feature-list">
-                        <div class="feature-list-item">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="20 6 9 17 4 12"/>
-                            </svg>
-                            <span>Immobilienverwaltung mit KI-Agenten inkl. vordefinierten Prozessen aus der Immobilienwirtschaft</span>
-                        </div>
-                        <div class="feature-list-item">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="20 6 9 17 4 12"/>
-                            </svg>
-                            <span>zentraler Nachrichteneingang mit automatischer Qualifizierung über Email, WhatsApp und weitere Kanäle</span>
-                        </div>
-                        <div class="feature-list-item">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="20 6 9 17 4 12"/>
-                            </svg>
-                            <span>zentrales Aufgaben- und Vorgangsmanagement</span>
-                        </div>
-                        <div class="feature-list-item">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="20 6 9 17 4 12"/>
-                            </svg>
-                            <span>Contract Management für Miet-, Versicheurngs-, Versorger- und Dienstleistungsverträge und alle anderen Vertragsarten</span>
-                        </div>
-                        <div class="feature-list-item">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="20 6 9 17 4 12"/>
-                            </svg>
-                            <span>Nachrichtenversand an Mieter, Handwerker oder andere Kontakte über alle Kanäle direkt aus ImmoMind</span>
-                        </div>
-                        <div class="feature-list-item">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="20 6 9 17 4 12"/>
-                            </svg>
-                            <span>Teil- oder Vollautomatisierung der Vorgangsbearbeitung durch KI-Agenten</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Pricing Section -->
-<section id="pricing" class="pricing-section">
-    <div class="section-container">
-        <div class="section-header animate-on-scroll">
-            <span class="section-badge">Editionen &amp; Preise</span>
-            <h2>Für jede Anforderung die passende Lösung</h2>
-            <p>Wählen Sie die Edition, die zu Ihren Bedürfnissen passt – von der professionellen Hausverwaltung bis zum Privatvermieter.</p>
-        </div>
-        <div class="pricing-grid">
-            <!-- Business Edition -->
-            <div class="pricing-card featured animate-on-scroll">
-                <div class="pricing-header">
-                    <div class="pricing-name">Business Edition</div>
-                    <p class="pricing-description">Für professionelle Hausverwaltungen mit allen Funktionen eines modernen All-In-One-Systems.</p>
-                    <div class="pricing-price">
-                        <span class="pricing-currency">€</span>
-                        <span class="pricing-amount">4.750</span>
-                        <span class="pricing-period">/ Jahr</span>
-                    </div>
-                </div>
-                <div class="pricing-features">
-                                        <div class="pricing-feature">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="20 6 9 17 4 12"/>
-                        </svg>
-                        <span>Bis zu 500 Einheiten</span>
-                    </div>
-                                        <div class="pricing-feature">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="20 6 9 17 4 12"/>
-                        </svg>
-                        <span>Alle OfficeMind Funktionen</span>
-                    </div>
-                                        <div class="pricing-feature">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="20 6 9 17 4 12"/>
-                        </svg>
-                        <span>Alle FinanceMind Funktionen</span>
-                    </div>
-                                        <div class="pricing-feature">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="20 6 9 17 4 12"/>
-                        </svg>
-                        <span>KI-Agenten &amp; Automatisierung</span>
-                    </div>
-                                        <div class="pricing-feature">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="20 6 9 17 4 12"/>
-                        </svg>
-                        <span>WEG- &amp; SE-Verwaltung</span>
-                    </div>
-                                        <div class="pricing-feature">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="20 6 9 17 4 12"/>
-                        </svg>
-                        <span>Größere Pakete auf Anfrage</span>
-                    </div>
-                                    </div>
-                <a href="#demo" class="btn btn-primary">Demo anfragen</a>
-            </div>
-            
-            <!-- Private Edition -->
-            <div class="pricing-card animate-on-scroll">
-                <div class="pricing-header">
-                    <div class="pricing-name">Private Edition</div>
-                    <p class="pricing-description">Speziell für Privatvermieter – alle wichtigen Funktionen in vereinfachter Form.</p>
-                    <div class="pricing-price">
-                        <span class="pricing-currency">€</span>
-                        <span class="pricing-amount">299</span>
-                        <span class="pricing-period">/ Jahr</span>
-                    </div>
-                </div>
-                <div class="pricing-features">
-                                        <div class="pricing-feature">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="20 6 9 17 4 12"/>
-                        </svg>
-                        <span>Bis zu 10 Einheiten</span>
-                    </div>
-                                        <div class="pricing-feature">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="20 6 9 17 4 12"/>
-                        </svg>
-                        <span>Basierend auf Business Edition</span>
-                    </div>
-                                        <div class="pricing-feature">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="20 6 9 17 4 12"/>
-                        </svg>
-                        <span>Sondereigentumsverwaltung</span>
-                    </div>
-                                        <div class="pricing-feature">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="20 6 9 17 4 12"/>
-                        </svg>
-                        <span>Mietbuchhaltung &amp; NKA</span>
-                    </div>
-                                        <div class="pricing-feature">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="20 6 9 17 4 12"/>
-                        </svg>
-                        <span>Dokumentenmanagement</span>
-                    </div>
-                                        <div class="pricing-feature">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="20 6 9 17 4 12"/>
-                        </svg>
-                        <span>Mieterportal</span>
-                    </div>
-                                    </div>
-                <a href="#demo" class="btn btn-secondary">Demo anfragen</a>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- CTA Section with Newsletter -->
-<section id="demo" class="cta-section">
-    <div class="cta-container">
-        <div class="cta-content">
-            <h2>Bereit für die Zukunft der Immobilienverwaltung?</h2>
-            <p>Tragen Sie sich in unsere Warteliste ein und erfahren Sie als Erstes, wenn ImmoMind verfügbar ist. Zusätzlich erhalten Sie exklusive Einblicke in neue Features.</p>
-            
-            <!-- Contact Form -->
-            <div class="immo-contact-form" id="immoContactForm">
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="vorname">Vorname</label>
-                        <input type="text" id="vorname" name="vorname" placeholder="Max" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="nachname">Nachname</label>
-                        <input type="text" id="nachname" name="nachname" placeholder="Mustermann" required>
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="email">E-Mail</label>
-                        <input type="email" id="email" name="email" placeholder="max@unternehmen.de" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="unternehmen">Unternehmen</label>
-                        <input type="text" id="unternehmen" name="unternehmen" placeholder="Ihre Hausverwaltung GmbH">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="nachricht">Nachricht</label>
-                    <textarea id="nachricht" name="nachricht" placeholder="Erzählen Sie uns von Ihrem Vorhaben..." required></textarea>
-                </div>
-                <button type="button" class="immo-form-submit" onclick="submitImmoForm()">
-                    Demo anfragen
-                    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 12 3.269 3.125A59.769 59.769 0 0 1 21.485 12 59.768 59.768 0 0 1 3.27 20.875L5.999 12Zm0 0h7.5"/></svg>
-                </button>
-                <div class="immo-form-hint">
-                    <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z"/></svg>
-                    Ihre Daten werden DSGVO-konform verarbeitet.
-                </div>
-            </div>
-
-            <div class="immo-form-success" id="immoFormSuccess">
-                <div class="immo-form-success-icon">
-                    <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m4.5 12.75 6 6 9-13.5"/></svg>
-                </div>
-                <h3>Vielen Dank!</h3>
-                <p>Ihre Nachricht ist bei uns eingegangen. Wir melden uns in Kürze.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-</main><!-- #main -->
-
-<!-- Footer -->
-<footer class="site-footer">
-    <div class="footer-container">
-        <div class="footer-grid">
-            <div class="footer-brand">
-                <a href="https://immomind.io/" class="logo">
-                    <div class="logo-icon">
-                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
-            <rect width="48" height="48" rx="12" fill="#0D9488"/>
-            <rect x="10" y="13" width="7" height="22" rx="2" fill="white"/>
-            <path d="M22 13L28 19L34 13V35H28V25L22 31V35H22V13Z" fill="white" fill-rule="evenodd"/>
-        </svg>                    </div>
-                    <span class="logo-text">Immo<span>Mind</span></span>
-                </a>
-                <p></p>
-            </div>
-            
-                            <div class="footer-column">
-                    <h5>Produkt</h5>
-                    <ul>
-                        <li><a href="#features">Features</a></li>
-                        <li><a href="#office">OfficeMind</a></li>
-                        <li><a href="#finance">FinanceMind</a></li>
-                        <li><a href="#pricing">Preise</a></li>
-                    </ul>
-                </div>
-                        
-                            <div class="footer-column">
-                    <h5>Rechtliches</h5>
-                    <ul>
-                        <li><a href="datenschutz/datenschutz.html">Datenschutz</a></li>
-                        <li><a href="impressum/impressum.html">Impressum</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-column">
-                    <h5>Folgen Sie uns</h5>
-                    <div class="footer-social">
-                        <a href="https://www.linkedin.com/company/integramind-solutions-gmbh/posts/?feedView=all" target="_blank" rel="noopener" aria-label="LinkedIn">
-                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" data-v-239d350c="">
-                                <path d="M4.17864 17.0736H0.693673V5.91478H4.17864V17.0736ZM2.43428 4.39261C1.3199 4.39261 0.416016 3.47483 0.416016 2.36678C0.416016 1.83455 0.628654 1.32411 1.00715 0.947763C1.38565 0.571415 1.899 0.359985 2.43428 0.359985C2.96956 0.359985 3.48291 0.571415 3.86141 0.947763C4.23991 1.32411 4.45255 1.83455 4.45255 2.36678C4.45255 3.47483 3.54829 4.39261 2.43428 4.39261ZM17.2218 17.0736H13.7443V11.6416C13.7443 10.347 13.718 8.68676 11.9324 8.68676C10.1205 8.68676 9.84285 10.0933 9.84285 11.5483V17.0736H6.36163V5.91478H9.70402V7.43694H9.7528C10.2181 6.56021 11.3546 5.63497 13.0502 5.63497C16.5772 5.63497 17.2255 7.94433 17.2255 10.9439V17.0736H17.2218Z" fill="currentColor" data-v-239d350c="">
-                                </path>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-                    </div>
-
-        <div class="footer-bottom">
-            <p>
-                © 2026 ImmoMind. Alle Rechte vorbehalten.            </p>
-        </div>
-    </div>
-</footer>
-
-<script type="speculationrules">
-{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/wp-*.php","/wp-admin/*","/wp-content/uploads/*","/wp-content/*","/wp-content/plugins/*","/wp-content/themes/immomind/*","/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
-</script>
-<script src="https://immomind.io/wp-content/themes/immomind/assets/js/main.js?ver=1.0.0" id="immomind-main-js"></script>
-<script>
-function submitImmoForm() {
-    const fields = ['vorname', 'nachname', 'email', 'nachricht'];
-    let valid = true;
-
-    fields.forEach(id => {
-        const el = document.getElementById(id);
-        if (!el.value.trim()) {
-            el.style.borderColor = '#ef4444';
-            el.style.boxShadow = '0 0 0 3px rgba(239,68,68,0.15)';
-            valid = false;
-        } else {
-            el.style.borderColor = '';
-            el.style.boxShadow = '';
-        }
-    });
-
-    const emailEl = document.getElementById('email');
-    if (emailEl.value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailEl.value)) {
-        emailEl.style.borderColor = '#ef4444';
-        emailEl.style.boxShadow = '0 0 0 3px rgba(239,68,68,0.15)';
-        valid = false;
-    }
-
-    if (!valid) return;
-
-    const btn = document.querySelector('.immo-form-submit');
-    btn.textContent = 'Wird gesendet...';
-    btn.disabled = true;
-
-    const data = {
-        vorname: document.getElementById('vorname').value.trim(),
-        nachname: document.getElementById('nachname').value.trim(),
-        email: document.getElementById('email').value.trim(),
-        unternehmen: document.getElementById('unternehmen').value.trim(),
-        nachricht: document.getElementById('nachricht').value.trim(),
-    };
-
-    fetch('https://formspree.io/f/xpqjvlel', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-        body: JSON.stringify(data),
-    })
-    .then(res => {
-        if (res.ok) {
-            document.getElementById('immoContactForm').style.display = 'none';
-            document.getElementById('immoFormSuccess').classList.add('show');
-        } else {
-            throw new Error();
-        }
-    })
-    .catch(() => {
-        btn.textContent = 'Demo anfragen';
-        btn.disabled = false;
-        alert('Es ist ein Fehler aufgetreten. Bitte versuche es erneut oder schreibe uns direkt an info@integramindsolutions.de');
-    });
+  --rand: clamp(1.25rem, 5vw, 4.5rem);
+  --radius: 16px;
 }
 
-document.querySelectorAll('#immoContactForm input, #immoContactForm textarea').forEach(el => {
-    el.addEventListener('input', function() {
-        this.style.borderColor = '';
-        this.style.boxShadow = '';
-    });
-});
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+section[id] { scroll-margin-top: 92px; }
+
+body {
+  margin: 0;
+  background: var(--grund);
+  color: var(--text);
+  font-family: var(--body);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 {
+  font-family: var(--display);
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  line-height: 1.05;
+  text-wrap: balance;
+  margin: 0;
+}
+
+p { margin: 0; }
+
+:focus-visible { outline: 2px solid var(--mint); outline-offset: 3px; border-radius: 4px; }
+
+.band { padding-inline: var(--rand); position: relative; }
+.innen { max-width: 1200px; margin-inline: auto; }
+
+.eyebrow {
+  font-family: var(--mono);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--mint);
+  margin: 0;
+}
+
+.kopf {
+  position: sticky; top: 0; z-index: 40;
+  background: rgba(5, 19, 15, 0.72);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.kopf .innen { display: flex; align-items: center; gap: 2.5rem; height: 72px; }
+
+.marke {
+  display: flex; align-items: center; gap: 0.625rem;
+  font-family: var(--display); font-weight: 600; font-size: 1.0625rem;
+  letter-spacing: -0.025em; color: var(--text); text-decoration: none;
+}
+
+.kopf nav { display: flex; gap: 2rem; margin-left: auto; font-size: 0.9375rem; }
+.kopf nav a { color: var(--text-weich); text-decoration: none; transition: color 0.18s; }
+.kopf nav a:hover { color: var(--text); }
+
+.knopf {
+  font-family: var(--body); font-size: 0.9375rem; font-weight: 600;
+  padding: 0.6875rem 1.375rem; border-radius: 10px; text-decoration: none;
+  display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+  border: 1px solid transparent; white-space: nowrap; cursor: pointer;
+  transition: transform 0.18s, box-shadow 0.18s, background 0.18s, border-color 0.18s;
+}
+
+.knopf-mint {
+  background: var(--mint); color: #04241F;
+  box-shadow: 0 0 0 1px rgba(94,234,212,0.4), 0 8px 28px -10px rgba(94,234,212,0.55);
+}
+.knopf-mint:hover { transform: translateY(-1px); box-shadow: 0 0 0 1px rgba(94,234,212,0.55), 0 12px 34px -10px rgba(94,234,212,0.7); }
+
+.knopf-glas { background: var(--flaeche); border-color: rgba(255,255,255,0.14); color: var(--text); }
+.knopf-glas:hover { background: var(--flaeche-2); border-color: var(--kante-hell); }
+
+.knopf-tinte { background: var(--tinte); color: var(--hell); }
+.knopf-tinte:hover { transform: translateY(-1px); box-shadow: 0 10px 26px -12px rgba(5,19,15,0.6); }
+
+.knopf-tinte-linie { border-color: var(--linie-hell); color: var(--tinte); }
+.knopf-tinte-linie:hover { border-color: var(--tinte); }
+
+.hero { padding-block: clamp(3.5rem, 8vw, 5.5rem) clamp(4.5rem, 10vw, 7.5rem); overflow: hidden; }
+
+.hero::before {
+  content: "";
+  position: absolute; inset: -30% -10% auto 28%; height: 130%;
+  background:
+    radial-gradient(45% 50% at 62% 32%, rgba(94,234,212,0.15), transparent 70%),
+    radial-gradient(40% 45% at 85% 62%, rgba(13,148,136,0.17), transparent 70%);
+  filter: blur(30px); pointer-events: none; z-index: 0;
+}
+
+.hero::after {
+  content: "";
+  position: absolute; inset: 0;
+  background-image: radial-gradient(rgba(94,234,212,0.09) 1px, transparent 1px);
+  background-size: 26px 26px;
+  mask-image: radial-gradient(70% 60% at 50% 35%, #000 20%, transparent 75%);
+  pointer-events: none; z-index: 0;
+}
+
+.hero .innen {
+  position: relative; z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.92fr);
+  gap: clamp(2.5rem, 6vw, 4.5rem);
+  align-items: center;
+}
+
+.hero h1 { font-size: clamp(2.375rem, 5.1vw, 3.875rem); margin-block: 1.375rem 1.5rem; }
+
+.hero h1 .hervor {
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.045em;
+  color: var(--mint);
+}
+
+.hero-text { font-size: 1.125rem; color: var(--text-weich); max-width: 44ch; }
+
+.hero-aktionen { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 2.25rem; }
+
+.beleg { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 2.5rem; }
+
+.beleg span {
+  font-family: var(--mono); font-size: 0.6875rem; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--text-weich);
+  border: 1px solid rgba(255,255,255,0.1); background: var(--flaeche);
+  border-radius: 999px; padding: 0.375rem 0.75rem;
+}
+
+.buehne { position: relative; }
+
+.glas {
+  background: linear-gradient(160deg, rgba(255,255,255,0.07), rgba(255,255,255,0.025));
+  border: 1px solid var(--kante);
+  border-radius: var(--radius);
+  backdrop-filter: blur(12px);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.08), 0 30px 60px -30px rgba(0,0,0,0.9);
+}
+
+.stapel { overflow: hidden; }
+
+.stapel-kopf {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0.875rem 1.25rem;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+  font-family: var(--mono); font-size: 0.6875rem; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--text-weich);
+}
+
+.posten {
+  display: grid; grid-template-columns: 1fr auto;
+  gap: 1rem; align-items: baseline;
+  padding: 0.625rem 1.25rem;
+  font-size: 0.9375rem;
+}
+
+.posten + .posten { border-top: 1px solid rgba(255,255,255,0.05); }
+
+.posten .betrag {
+  font-family: var(--mono); font-size: 0.875rem;
+  font-variant-numeric: tabular-nums; color: var(--text-weich);
+}
+
+.stapel-summe {
+  display: grid; grid-template-columns: 1fr auto;
+  gap: 1rem; align-items: baseline;
+  padding: 0.9375rem 1.25rem;
+  border-top: 1px solid var(--kante);
+  background: rgba(251,191,36,0.06);
+}
+
+.stapel-summe .label {
+  font-family: var(--mono); font-size: 0.6875rem; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--bernstein);
+}
+
+.stapel-summe .betrag {
+  font-family: var(--display); font-weight: 700; font-size: 1.375rem;
+  letter-spacing: -0.03em; font-variant-numeric: tabular-nums;
+  color: var(--bernstein);
+}
+
+.leitung {
+  position: relative; height: 58px; width: 2px; margin-inline: auto;
+  background: linear-gradient(180deg, var(--kante), var(--kante-hell), var(--kante));
+  border-radius: 2px;
+}
+
+.laeufer {
+  position: absolute; left: 50%; width: 7px; height: 7px; margin-left: -3.5px;
+  border-radius: 50%; background: var(--mint);
+  box-shadow: 0 0 12px 3px rgba(94,234,212,0.75);
+  animation: laufen 2.8s cubic-bezier(0.6,0,0.4,1) infinite;
+}
+
+@keyframes laufen {
+  0%        { top: -4px; opacity: 0; }
+  12%       { opacity: 1; }
+  70%, 100% { top: 54px; opacity: 0; }
+}
+
+.leitung-label {
+  position: absolute; left: calc(50% + 1.125rem); top: 50%; transform: translateY(-50%);
+  font-family: var(--mono); font-size: 0.625rem; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--text-weich); white-space: nowrap;
+}
+
+.ersatz {
+  position: relative; overflow: hidden;
+  border-color: var(--kante-hell);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.1),
+    0 0 0 1px rgba(94,234,212,0.08),
+    0 34px 70px -28px rgba(0,0,0,0.95),
+    0 0 60px -22px rgba(94,234,212,0.45);
+  padding: 1.375rem 1.25rem;
+  display: grid; gap: 0.75rem;
+}
+
+.ersatz-marke {
+  display: flex; align-items: center; gap: 0.5625rem;
+  font-family: var(--display); font-weight: 700; font-size: 1.25rem;
+  letter-spacing: -0.03em;
+}
+
+.funke {
+  width: 7px; height: 7px; border-radius: 50%; background: var(--mint);
+  box-shadow: 0 0 8px 2px rgba(94,234,212,0.7);
+  animation: pochen 2.4s ease-in-out infinite;
+}
+
+@keyframes pochen { 0%, 100% { opacity: 1; } 50% { opacity: 0.35; } }
+
+.ersatz-zeile { display: flex; flex-wrap: wrap; gap: 0.4375rem; }
+
+.ersatz-zeile span {
+  font-family: var(--mono); font-size: 0.6875rem; letter-spacing: 0.06em;
+  color: var(--mint); border: 1px solid var(--kante);
+  background: rgba(94,234,212,0.07);
+  border-radius: 999px; padding: 0.25rem 0.625rem;
+}
+
+.ersatz-fuss { font-size: 0.9375rem; color: var(--text-weich); }
+
+.bereiche { background: var(--grund-2); padding-block: clamp(4rem, 9vw, 7rem); border-block: 1px solid rgba(255,255,255,0.05); }
+
+.abschnitt-kopf {
+  display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(2rem, 5vw, 4rem); align-items: end; margin-bottom: 3rem;
+}
+
+.abschnitt-kopf h2 { font-size: clamp(1.875rem, 3.9vw, 2.875rem); margin-top: 1.125rem; }
+.abschnitt-kopf > p { color: var(--text-weich); max-width: 44ch; }
+
+.bereich-raster {
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+.bereich {
+  position: relative;
+  background: linear-gradient(165deg, rgba(255,255,255,0.055), rgba(255,255,255,0.02));
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: var(--radius);
+  padding: 1.75rem;
+  display: grid; gap: 1rem; align-content: start;
+  transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s;
+}
+
+.bereich:hover {
+  border-color: var(--kante-hell);
+  transform: translateY(-2px);
+  box-shadow: 0 24px 50px -30px rgba(0,0,0,0.9), 0 0 40px -24px rgba(94,234,212,0.5);
+}
+
+.bereich-symbol {
+  width: 42px; height: 42px; border-radius: 12px;
+  display: grid; place-items: center;
+  background: rgba(94,234,212,0.1);
+  border: 1px solid var(--kante);
+}
+
+.bereich h3 { font-size: 1.25rem; letter-spacing: -0.03em; }
+
+.ersetzt {
+  font-family: var(--mono); font-size: 0.625rem; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--bernstein);
+  border-top: 1px dashed rgba(251,191,36,0.28);
+  border-bottom: 1px dashed rgba(251,191,36,0.28);
+  padding-block: 0.5rem;
+}
+
+.bereich ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 0.5rem; }
+
+.bereich li {
+  display: grid; grid-template-columns: auto 1fr; gap: 0.625rem;
+  font-size: 0.9375rem; color: var(--text-weich); align-items: start;
+}
+
+.tupfen {
+  width: 5px; height: 5px; border-radius: 50%; background: var(--mint);
+  margin-top: 0.5625rem; opacity: 0.75;
+}
+
+.agenten { padding-block: clamp(4rem, 9vw, 7rem); }
+
+.agent-raster {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1px;
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.agent {
+  background: var(--grund); padding: 1.5rem 1.375rem;
+  display: grid; gap: 0.625rem; align-content: start;
+  transition: background 0.22s;
+}
+
+.agent:hover { background: var(--grund-2); }
+
+.agent-symbol { color: var(--mint); }
+
+.agent h3 { font-size: 1.0625rem; font-weight: 600; letter-spacing: -0.02em; }
+
+.agent p { font-size: 0.875rem; color: var(--text-weich); }
+
+.wirkung {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.25rem; margin-top: 1.25rem;
+}
+
+.wirkung div {
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 12px; padding: 1.125rem 1.25rem;
+  background: var(--flaeche);
+}
+
+.wirkung h3 {
+  font-family: var(--display); font-size: 1.0625rem; font-weight: 600;
+  letter-spacing: -0.02em; color: var(--mint); margin-bottom: 0.25rem;
+}
+
+.wirkung p { font-size: 0.875rem; color: var(--text-weich); }
+
+.wechsel { background: var(--grund-2); padding-block: clamp(4rem, 9vw, 7rem); border-block: 1px solid rgba(255,255,255,0.05); }
+
+.schritte {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.25rem; margin-bottom: 1.25rem;
+}
+
+.schritt {
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: var(--radius);
+  padding: 1.5rem 1.375rem;
+  display: grid; gap: 0.625rem; align-content: start;
+  background: linear-gradient(165deg, rgba(255,255,255,0.05), rgba(255,255,255,0.018));
+}
+
+.schritt-nr {
+  font-family: var(--mono); font-size: 0.75rem; font-weight: 500;
+  letter-spacing: 0.1em; color: var(--mint);
+  font-variant-numeric: tabular-nums;
+}
+
+.schritt h3 { font-size: 1.125rem; letter-spacing: -0.025em; }
+.schritt p { font-size: 0.9375rem; color: var(--text-weich); }
+
+.hilfe {
+  display: grid; grid-template-columns: auto minmax(0, 1fr) auto;
+  gap: 1.375rem; align-items: center;
+  border: 1px solid var(--kante-hell);
+  border-radius: var(--radius);
+  padding: 1.5rem 1.625rem;
+  background: linear-gradient(100deg, rgba(94,234,212,0.11), rgba(94,234,212,0.03));
+}
+
+.hilfe-symbol {
+  width: 42px; height: 42px; border-radius: 12px;
+  display: grid; place-items: center; flex-shrink: 0;
+  background: rgba(94,234,212,0.13);
+  border: 1px solid var(--kante-hell);
+}
+
+.hilfe h3 { font-size: 1.125rem; letter-spacing: -0.025em; margin-bottom: 0.25rem; }
+.hilfe p { font-size: 0.9375rem; color: var(--text-weich); }
+
+.editionen { background: var(--hell); color: var(--tinte); padding-block: clamp(4rem, 9vw, 7rem); }
+.editionen .eyebrow { color: var(--teal-dunkel); }
+
+.editionen-kopf { text-align: center; max-width: 48ch; margin: 0 auto 3rem; }
+.editionen-kopf h2 { font-size: clamp(1.875rem, 3.9vw, 2.875rem); margin-block: 1.125rem 1rem; }
+.editionen-kopf p { color: var(--tinte-weich); }
+
+.karten {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.25rem; max-width: 880px; margin-inline: auto;
+}
+
+.karte {
+  background: var(--hell-karte); border: 1px solid var(--linie-hell);
+  border-radius: var(--radius); padding: 1.875rem;
+  display: grid; gap: 1.125rem; align-content: start;
+  box-shadow: 0 1px 2px rgba(5,19,15,0.04), 0 18px 40px -30px rgba(5,19,15,0.4);
+}
+
+.karte h3 { font-size: 1.375rem; letter-spacing: -0.028em; }
+.karte-fuer { font-size: 0.9375rem; color: var(--tinte-weich); }
+
+.umfang {
+  font-family: var(--mono); font-size: 0.6875rem; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--teal-dunkel);
+  background: rgba(13,148,136,0.09); border: 1px solid rgba(13,148,136,0.2);
+  border-radius: 999px; padding: 0.3125rem 0.6875rem; justify-self: start;
+}
+
+.karte ul {
+  list-style: none; padding: 0; margin: 0; display: grid; gap: 0.625rem;
+  border-top: 1px solid var(--linie-hell); padding-top: 1.125rem;
+}
+
+.karte li { display: grid; grid-template-columns: auto 1fr; gap: 0.625rem; font-size: 0.9375rem; align-items: start; }
+.karte li svg { margin-top: 0.3125rem; }
+.karte .knopf { width: 100%; }
+
+.anfrage-hinweis { text-align: center; margin-top: 2rem; font-size: 0.9375rem; color: var(--tinte-weich); }
+.anfrage-hinweis a { color: var(--teal-dunkel); font-weight: 500; }
+
+.interesse { padding-block: clamp(4rem, 9vw, 7rem); overflow: hidden; }
+
+.interesse::before {
+  content: "";
+  position: absolute; inset: auto -10% -40% 20%; height: 120%;
+  background: radial-gradient(45% 55% at 50% 70%, rgba(94,234,212,0.13), transparent 70%);
+  filter: blur(34px); pointer-events: none; z-index: 0;
+}
+
+.interesse .innen { position: relative; z-index: 1; max-width: 720px; }
+
+.interesse-kopf { text-align: center; margin-bottom: 2.5rem; }
+.interesse-kopf h2 { font-size: clamp(1.875rem, 3.9vw, 2.75rem); margin-block: 1.125rem 1rem; }
+.interesse-kopf p { color: var(--text-weich); max-width: 52ch; margin-inline: auto; }
+
+.formular { display: grid; gap: 1rem; }
+
+.feld-paar { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+
+.feld { display: grid; gap: 0.4375rem; }
+
+.feld label {
+  font-family: var(--mono); font-size: 0.625rem; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--text-weich);
+}
+
+.feld input,
+.feld textarea {
+  font-family: var(--body); font-size: 0.9375rem; color: var(--text);
+  background: rgba(255,255,255,0.045);
+  border: 1px solid rgba(255,255,255,0.13);
+  border-radius: 10px;
+  padding: 0.75rem 0.875rem;
+  width: 100%;
+  transition: border-color 0.18s, background 0.18s;
+}
+
+.feld textarea { min-height: 118px; resize: vertical; line-height: 1.55; }
+
+.feld input::placeholder,
+.feld textarea::placeholder { color: var(--text-still); }
+
+.feld input:hover,
+.feld textarea:hover { border-color: rgba(255,255,255,0.22); }
+
+.feld input:focus,
+.feld textarea:focus {
+  outline: none;
+  border-color: var(--kante-hell);
+  background: rgba(255,255,255,0.07);
+  box-shadow: 0 0 0 3px rgba(94,234,212,0.12);
+}
+
+.formular .knopf { margin-top: 0.375rem; }
+
+.kleingedruckt {
+  display: flex; align-items: center; justify-content: center;
+  gap: 0.5rem;
+  font-size: 0.8125rem; color: var(--text-still); text-align: center;
+}
+
+.kleingedruckt svg { flex-shrink: 0; color: var(--mint); opacity: 0.8; }
+
+.kleingedruckt a { color: var(--text-weich); }
+
+.honig { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+
+.meldung {
+  border-radius: var(--radius);
+  padding: 1.5rem 1.625rem;
+  display: grid; gap: 0.5rem;
+}
+
+.meldung h3 { font-size: 1.25rem; letter-spacing: -0.028em; }
+.meldung p { font-size: 0.9375rem; color: var(--text-weich); }
+
+.meldung-gut {
+  border: 1px solid var(--kante-hell);
+  background: linear-gradient(100deg, rgba(94,234,212,0.12), rgba(94,234,212,0.03));
+}
+.meldung-gut h3 { color: var(--mint); }
+
+.meldung-schlecht {
+  border: 1px solid rgba(251,191,36,0.35);
+  background: rgba(251,191,36,0.07);
+}
+.meldung-schlecht h3 { color: var(--bernstein); }
+.meldung-schlecht a { color: var(--bernstein); }
+
+[hidden] { display: none !important; }
+
+.fuss {
+  border-top: 1px solid rgba(255,255,255,0.07);
+  padding-block: 3rem 2.25rem;
+}
+
+.fuss .innen {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) repeat(2, minmax(0, 1fr));
+  gap: 2.5rem;
+}
+
+.fuss-marke { display: grid; gap: 0.875rem; align-content: start; }
+.fuss-marke p { font-size: 0.875rem; color: var(--text-still); max-width: 32ch; }
+
+.fuss-spalte { display: grid; gap: 0.625rem; align-content: start; }
+
+.fuss-spalte h3 {
+  font-family: var(--mono); font-size: 0.625rem; font-weight: 500;
+  letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-still);
+  margin-bottom: 0.25rem;
+}
+
+.fuss-spalte a {
+  font-size: 0.9375rem; color: var(--text-weich);
+  text-decoration: none; transition: color 0.18s;
+}
+.fuss-spalte a:hover { color: var(--text); }
+
+.fuss-unten {
+  max-width: 1200px; margin: 2.5rem auto 0;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255,255,255,0.07);
+  display: flex; flex-wrap: wrap; gap: 1rem; justify-content: space-between;
+  font-size: 0.8125rem; color: var(--text-still);
+}
+
+@keyframes auf { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+
+.hero-inhalt > * { animation: auf 0.65s cubic-bezier(0.22,1,0.36,1) backwards; }
+.hero-inhalt > :nth-child(1) { animation-delay: 0.05s; }
+.hero-inhalt > :nth-child(2) { animation-delay: 0.13s; }
+.hero-inhalt > :nth-child(3) { animation-delay: 0.21s; }
+.hero-inhalt > :nth-child(4) { animation-delay: 0.29s; }
+.hero-inhalt > :nth-child(5) { animation-delay: 0.37s; }
+
+.stapel  { animation: auf 0.75s cubic-bezier(0.22,1,0.36,1) 0.35s backwards; }
+.leitung { animation: auf 0.5s ease-out 0.8s backwards; }
+.ersatz  { animation: auf 0.8s cubic-bezier(0.22,1,0.36,1) 0.95s backwards; }
+
+.enthuellen {
+  opacity: 0; transform: translateY(24px);
+  transition: opacity 0.75s cubic-bezier(0.22,1,0.36,1), transform 0.75s cubic-bezier(0.22,1,0.36,1);
+}
+.enthuellen.da { opacity: 1; transform: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  .enthuellen { opacity: 1; transform: none; }
+  .laeufer { display: none; }
+}
+
+@media (max-width: 880px) {
+  .hero .innen, .abschnitt-kopf, .bereich-raster { grid-template-columns: minmax(0, 1fr); }
+  .abschnitt-kopf { align-items: start; }
+  .kopf nav { display: none; }
+  .kopf .innen { gap: 1rem; }
+  .kopf .knopf { margin-left: auto; }
+}
+
+@media (max-width: 760px) {
+  .fuss .innen { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .fuss-marke { grid-column: 1 / -1; }
+}
+
+@media (max-width: 520px) {
+  .leitung-label { display: none; }
+  .feld-paar { grid-template-columns: minmax(0, 1fr); }
+  .fuss .innen { grid-template-columns: minmax(0, 1fr); gap: 2rem; }
+  .hilfe { grid-template-columns: minmax(0, 1fr); gap: 1rem; justify-items: start; }
+  .posten { grid-template-columns: 1fr auto; }
+  .bereich { padding: 1.375rem; }
+}
+</style>
+</head>
+<body>
+<header class="kopf band">
+  <div class="innen">
+    <a class="marke" href="#">
+      <svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true">
+        <rect width="30" height="30" rx="8" fill="#0D9488"/>
+        <path d="M8 21V9h2.6l4.4 6.4L19.4 9H22v12h-2.4v-7.9L15.6 18h-1.2l-4-4.9V21H8Z" fill="#E9F4F1"/>
+      </svg>
+      ImmoMind
+    </a>
+    <nav>
+      <a href="#bereiche">Leistungsbereiche</a>
+      <a href="#agenten">KI-Agenten</a>
+      <a href="#wechsel">Wechsel</a>
+      <a href="#editionen">Editionen</a>
+      <a href="#interesse">Warteliste</a>
+    </nav>
+    <a class="knopf knopf-mint" href="#interesse">Demo anfragen</a>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero band">
+    <div class="innen">
+
+      <div class="hero-inhalt">
+        <p class="eyebrow">KI-gestützte Immobilienverwaltung</p>
+        <h1>Aus sieben Systemen wird <span class="hervor">eines</span>.</h1>
+        <p class="hero-text">
+          ImmoMind bündelt Objektverwaltung, Buchhaltung, Vorgänge und Portal in einer
+          Plattform — vollständig integriert, ohne Schnittstellen und ohne doppelte
+          Datenhaltung. Eine Oberfläche für Ihr ganzes Team.
+        </p>
+        <div class="hero-aktionen">
+          <a class="knopf knopf-mint" href="#interesse">Demo anfragen</a>
+          <a class="knopf knopf-glas" href="#bereiche">Leistungsbereiche ansehen</a>
+        </div>
+        <div class="beleg">
+          <span>DSGVO-konform</span>
+          <span>Daten in Deutschland</span>
+          <span>DATEV-Export</span>
+          <span>WEG-Verwaltung</span>
+        </div>
+      </div>
+
+      <div class="buehne">
+
+        <div class="glas stapel">
+          <div class="stapel-kopf">
+            <span>Ihr Stack heute</span>
+            <span>500 Einheiten</span>
+          </div>
+          <div class="posten"><span>Hausverwaltungssoftware</span><span class="betrag">3.000 €</span></div>
+          <div class="posten"><span>Eigentümer- &amp; Mieterportal</span><span class="betrag">2.000 €</span></div>
+          <div class="posten"><span>Dokumentenmanagement</span><span class="betrag">1.200 €</span></div>
+          <div class="posten"><span>Ticketsystem &amp; Kommunikation</span><span class="betrag">1.000 €</span></div>
+          <div class="posten"><span>Banking &amp; Buchhaltung</span><span class="betrag">800 €</span></div>
+          <div class="posten"><span>Vertragsverwaltung</span><span class="betrag">600 €</span></div>
+          <div class="posten"><span>Schlüsselverwaltung</span><span class="betrag">400 €</span></div>
+          <div class="stapel-summe">
+            <span class="label">Sieben Verträge</span>
+            <span class="betrag">9.000 € / Jahr</span>
+          </div>
+        </div>
+
+        <div class="leitung">
+          <span class="laeufer"></span>
+          <span class="leitung-label">ersetzt durch</span>
+        </div>
+
+        <div class="glas ersatz">
+          <p class="ersatz-marke"><span class="funke"></span>ImmoMind</p>
+          <div class="ersatz-zeile">
+            <span>Ein System</span>
+            <span>Ein Vertrag</span>
+            <span>Ein Login</span>
+          </div>
+          <p class="ersatz-fuss">Keine Schnittstellen, keine doppelte Datenhaltung, kein Medienbruch.</p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <section class="bereiche band" id="bereiche">
+    <div class="innen">
+
+      <div class="abschnitt-kopf enthuellen">
+        <div>
+          <p class="eyebrow">Leistungsbereiche</p>
+          <h2>Vier Bereiche, die den ganzen Stapel abdecken</h2>
+        </div>
+        <p>
+          Jeder Bereich ersetzt konkrete Posten aus der Rechnung oben. Zusammen decken
+          sie alle sieben ab — vollständig integriert, ohne Schnittstellen.
+        </p>
+      </div>
+
+      <div class="bereich-raster enthuellen">
+
+        <article class="bereich">
+          <span class="bereich-symbol">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+              <path d="M3 17V7.5L10 3l7 4.5V17M3 17h14M8 17v-4.5h4V17" stroke="#5EEAD4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+          <h3>Objekt- &amp; Vertragsmanagement</h3>
+          <p class="ersetzt">Ersetzt Hausverwaltungssoftware · DMS · Vertragsverwaltung</p>
+          <ul>
+            <li><span class="tupfen"></span>Objekte, Gebäude und Einheiten</li>
+            <li><span class="tupfen"></span>Zählermanagement mit Foto-Erfassung</li>
+            <li><span class="tupfen"></span>Mieterverwaltung</li>
+            <li><span class="tupfen"></span>Verträge: Miete, Kündigungen, Verlängerungen</li>
+            <li><span class="tupfen"></span>Dokumentenmanagement mit Checklisten</li>
+            <li><span class="tupfen"></span>Fristen- und Statusüberwachung</li>
+          </ul>
+        </article>
+
+        <article class="bereich">
+          <span class="bereich-symbol">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+              <path d="M3 6.5h14v10H3zM3 9.5h14M6.5 13h3" stroke="#5EEAD4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M6 6.5V4.5h8v2" stroke="#5EEAD4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+          <h3>Finanz- &amp; Rechnungswesen</h3>
+          <p class="ersetzt">Ersetzt Banking &amp; Buchhaltung</p>
+          <ul>
+            <li><span class="tupfen"></span>Mietbuchhaltung und Zahlungseingänge</li>
+            <li><span class="tupfen"></span>Mahnwesen</li>
+            <li><span class="tupfen"></span>Nebenkostenabrechnung</li>
+            <li><span class="tupfen"></span>Einnahmen- und Ausgabenverwaltung</li>
+            <li><span class="tupfen"></span>Reporting: Cashflow, Rendite, Leerstand</li>
+            <li><span class="tupfen"></span>DATEV-Export und eBanking</li>
+          </ul>
+        </article>
+
+        <article class="bereich">
+          <span class="bereich-symbol">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+              <path d="M12.5 3.5a3.5 3.5 0 0 0-3.2 4.9L3.5 14.2v2.3h2.3l5.8-5.8a3.5 3.5 0 1 0 1-7.2Z" stroke="#5EEAD4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+          <h3>Technik &amp; Betrieb</h3>
+          <p class="ersetzt">Ersetzt Ticketsystem · Schlüsselverwaltung</p>
+          <ul>
+            <li><span class="tupfen"></span>Schadensmeldungen und Ticket-System</li>
+            <li><span class="tupfen"></span>Instandhaltungs- und Wartungsplanung</li>
+            <li><span class="tupfen"></span>Dienstleistersteuerung</li>
+            <li><span class="tupfen"></span>Schließanlagen, Zylinder und Schlüsselschränke</li>
+            <li><span class="tupfen"></span>Kostenkontrolle bei Reparaturen</li>
+            <li><span class="tupfen"></span>Aufgaben- und Vorgangsmanagement</li>
+          </ul>
+        </article>
+
+        <article class="bereich">
+          <span class="bereich-symbol">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+              <path d="M3.5 4.5h13v9h-7.5L5.5 17v-3.5h-2z" stroke="#5EEAD4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M7 8h6M7 10.5h4" stroke="#5EEAD4" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </span>
+          <h3>Kommunikation &amp; Analyse</h3>
+          <p class="ersetzt">Ersetzt Eigentümer- &amp; Mieterportal</p>
+          <ul>
+            <li><span class="tupfen"></span>Portal für Mieter, Eigentümer und Handwerker</li>
+            <li><span class="tupfen"></span>Nachrichten über E-Mail, WhatsApp und weitere Kanäle</li>
+            <li><span class="tupfen"></span>Schadensmeldung, Zählerstände und Termine online</li>
+            <li><span class="tupfen"></span>Steuerunterlagen und Nebenkosten zum Abruf</li>
+            <li><span class="tupfen"></span>Rollen- und Rechtemanagement</li>
+            <li><span class="tupfen"></span>Portfolioanalyse und KPI-Dashboards</li>
+          </ul>
+        </article>
+
+      </div>
+
+    </div>
+  </section>
+
+  <section class="agenten band" id="agenten">
+    <div class="innen">
+
+      <div class="abschnitt-kopf enthuellen">
+        <div>
+          <p class="eyebrow">KI als Produktivitätsmotor</p>
+          <h2>Fünf Agenten, die mitarbeiten</h2>
+        </div>
+        <p>
+          Durchgängige Automatisierung vom ersten Mieterkontakt bis zur Jahresabrechnung.
+          Die Agenten übernehmen die Zuarbeit, das Team behält die Entscheidungen.
+        </p>
+      </div>
+
+      <div class="agent-raster enthuellen">
+
+        <article class="agent">
+          <span class="agent-symbol">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M3 5.5h14v9H3zM3 6l7 5 7-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          <h3>Analyse der Eingangspost</h3>
+          <p>Eingehende Nachrichten über alle Kanäle werden automatisch geprüft und für die Bearbeitung vorqualifiziert.</p>
+        </article>
+
+        <article class="agent">
+          <span class="agent-symbol">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 3h6l4 4v10H5z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M11 3v4h4M7.5 11h5M7.5 13.5h3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </span>
+          <h3>Dokumentenanalyse</h3>
+          <p>Dokumenttypen werden erkannt, zugeordnet und die relevanten Metadaten extrahiert.</p>
+        </article>
+
+        <article class="agent">
+          <span class="agent-symbol">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="8.5" cy="7" r="3" stroke="currentColor" stroke-width="1.5"/><path d="M3 16c0-2.5 2.5-4 5.5-4M13 13.5l1.5 1.5L17.5 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          <h3>Bewerbercheck</h3>
+          <p>Interessenten bei Neuvermietung werden anhand von Dokumenten und Bonitätsmerkmalen vorgeprüft.</p>
+        </article>
+
+        <article class="agent">
+          <span class="agent-symbol">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 4h12v12H4z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M7 7.5h6M7 10.5h6M7 13h3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </span>
+          <h3>Buchungsassistent</h3>
+          <p>Belege werden automatisiert verbucht und kontiert — das Buchhaltungsteam prüft nur noch.</p>
+        </article>
+
+        <article class="agent">
+          <span class="agent-symbol">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M3 10h14M13 6l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M7 5.5 3 10l4 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          <h3>E-Banking-Abgleich</h3>
+          <p>Zahlungseingänge werden automatisch gegen offene Posten abgeglichen.</p>
+        </article>
+
+      </div>
+
+      <div class="wirkung enthuellen">
+        <div>
+          <h3>Zeitersparnis</h3>
+          <p>Automatisierung repetitiver Aufgaben spart Stunden pro Verwalter und Tag.</p>
+        </div>
+        <div>
+          <h3>Weniger Fehler</h3>
+          <p>KI-gestützte Qualitätssicherung reduziert manuelle Fehler deutlich.</p>
+        </div>
+        <div>
+          <h3>Schnellere Reaktion</h3>
+          <p>Echtzeit-Bearbeitung verbessert den Service für Mieter und Eigentümer.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="wechsel band" id="wechsel">
+    <div class="innen">
+
+      <div class="abschnitt-kopf enthuellen">
+        <div>
+          <p class="eyebrow">Der Wechsel</p>
+          <h2>Umziehen dauert Tage, nicht Monate</h2>
+        </div>
+        <p>
+          ImmoMind ist sofort startklar — kein aufwändiges Setup, kein IT-Projekt,
+          keine Beratertage. Und wenn Sie möchten, übernimmt unser Team die
+          Datenmigration komplett für Sie.
+        </p>
+      </div>
+
+      <div class="schritte enthuellen">
+
+        <article class="schritt">
+          <span class="schritt-nr">Schritt 1</span>
+          <h3>Daten exportieren</h3>
+          <p>Aus Excel, CSV oder Ihrem bisherigen System. Wir sagen Ihnen vorher genau, welche Felder wir brauchen.</p>
+        </article>
+
+        <article class="schritt">
+          <span class="schritt-nr">Schritt 2</span>
+          <h3>Import prüfen</h3>
+          <p>Objekte, Einheiten, Verträge und Kontakte landen strukturiert im System. Sie sehen vor der Freigabe, was angekommen ist.</p>
+        </article>
+
+        <article class="schritt">
+          <span class="schritt-nr">Schritt 3</span>
+          <h3>Loslegen</h3>
+          <p>Kein IT-Wissen nötig. Ihr Team arbeitet ab dem ersten Tag im neuen System — die Altsysteme können abgeschaltet werden.</p>
+        </article>
+
+      </div>
+
+      <div class="hilfe enthuellen">
+        <span class="hilfe-symbol">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+            <path d="M10 2.5 3.5 5.5v4.2c0 3.4 2.7 6.5 6.5 7.8 3.8-1.3 6.5-4.4 6.5-7.8V5.5L10 2.5Z" stroke="#5EEAD4" stroke-width="1.5" stroke-linejoin="round"/>
+            <path d="m7.3 10 2 2 3.4-3.6" stroke="#5EEAD4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        <div>
+          <h3>Lieber abgeben? Machen wir.</h3>
+          <p>Auf Wunsch übernimmt unser Team die gesamte Datenübernahme — Stammdaten, Verträge, Kontenrahmen und Altbelege. Sie liefern den Export, wir liefern das eingerichtete System.</p>
+        </div>
+        <a class="knopf knopf-glas" href="#interesse">Migration besprechen</a>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="editionen band" id="editionen">
+    <div class="innen">
+
+      <div class="editionen-kopf">
+        <p class="eyebrow">Editionen</p>
+        <h2>Für jede Anforderung die passende Lösung</h2>
+        <p>
+          Der Zuschnitt hängt von Bestand, Team und Modulen ab. Wir rechnen Ihnen ein
+          Angebot auf Ihren Bestand und zeigen Ihnen ImmoMind im Gespräch.
+        </p>
+      </div>
+
+      <div class="karten">
+
+        <article class="karte">
+          <div>
+            <h3>Business Edition</h3>
+            <p class="karte-fuer">Für professionelle Hausverwaltungen mit allen Funktionen eines modernen All-in-one-Systems.</p>
+          </div>
+          <span class="umfang">Bis 500 Einheiten · größer auf Anfrage</span>
+          <ul>
+            <li><svg width="9" height="7" viewBox="0 0 9 7" fill="none" aria-hidden="true"><path d="M1 3.4 3.3 5.7 8 1" stroke="#076A60" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Alle vier Leistungsbereiche</li>
+            <li><svg width="9" height="7" viewBox="0 0 9 7" fill="none" aria-hidden="true"><path d="M1 3.4 3.3 5.7 8 1" stroke="#076A60" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Alle fünf KI-Agenten</li>
+            <li><svg width="9" height="7" viewBox="0 0 9 7" fill="none" aria-hidden="true"><path d="M1 3.4 3.3 5.7 8 1" stroke="#076A60" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>WEG- und SE-Verwaltung</li>
+            <li><svg width="9" height="7" viewBox="0 0 9 7" fill="none" aria-hidden="true"><path d="M1 3.4 3.3 5.7 8 1" stroke="#076A60" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Konfigurierbare Geschäftsprozesse</li>
+          </ul>
+          <a class="knopf knopf-tinte" href="#interesse">Demo anfragen</a>
+        </article>
+
+        <article class="karte">
+          <div>
+            <h3>Private Edition</h3>
+            <p class="karte-fuer">Für Privatvermieter — alle wichtigen Funktionen in vereinfachter Form, inklusive FamilyOffice.</p>
+          </div>
+          <span class="umfang">Bis 10 Einheiten</span>
+          <ul>
+            <li><svg width="9" height="7" viewBox="0 0 9 7" fill="none" aria-hidden="true"><path d="M1 3.4 3.3 5.7 8 1" stroke="#076A60" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Basiert auf der Business Edition</li>
+            <li><svg width="9" height="7" viewBox="0 0 9 7" fill="none" aria-hidden="true"><path d="M1 3.4 3.3 5.7 8 1" stroke="#076A60" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Mietbuchhaltung und Nebenkostenabrechnung</li>
+            <li><svg width="9" height="7" viewBox="0 0 9 7" fill="none" aria-hidden="true"><path d="M1 3.4 3.3 5.7 8 1" stroke="#076A60" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Dokumentenmanagement und Mieterportal</li>
+            <li><svg width="9" height="7" viewBox="0 0 9 7" fill="none" aria-hidden="true"><path d="M1 3.4 3.3 5.7 8 1" stroke="#076A60" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Sondereigentumsverwaltung</li>
+          </ul>
+          <a class="knopf knopf-tinte-linie" href="#interesse">Demo anfragen</a>
+        </article>
+
+      </div>
+
+      <p class="anfrage-hinweis">
+        Lieber direkt schreiben? <a href="mailto:info@integramindsolutions.de">info@integramindsolutions.de</a>
+      </p>
+
+    </div>
+  </section>
+
+  <section class="interesse band" id="interesse">
+    <div class="innen">
+
+      <div class="interesse-kopf enthuellen">
+        <p class="eyebrow">Warteliste</p>
+        <h2>Bereit für die Zukunft der Immobilienverwaltung?</h2>
+        <p>
+          Tragen Sie sich in unsere Warteliste ein und erfahren Sie als Erstes, wenn
+          ImmoMind verfügbar ist. Zusätzlich erhalten Sie exklusive Einblicke in neue Features.
+        </p>
+      </div>
+
+      <form class="formular enthuellen" id="interesse-formular"
+            action="https://formspree.io/f/xpqjvlel" method="POST">
+
+        <input type="hidden" name="_subject" value="Warteliste-Eintrag (immomind.io)">
+        <input type="hidden" name="formular" value="warteliste">
+        <div class="honig" aria-hidden="true">
+          <label for="gotcha">Bitte leer lassen</label>
+          <input type="text" id="gotcha" name="_gotcha" tabindex="-1" autocomplete="off">
+        </div>
+
+        <div class="feld-paar">
+          <div class="feld">
+            <label for="vorname">Vorname</label>
+            <input type="text" id="vorname" name="vorname" autocomplete="given-name" required
+                   placeholder="Max">
+          </div>
+          <div class="feld">
+            <label for="nachname">Nachname</label>
+            <input type="text" id="nachname" name="nachname" autocomplete="family-name" required
+                   placeholder="Mustermann">
+          </div>
+        </div>
+
+        <div class="feld-paar">
+          <div class="feld">
+            <label for="email">E-Mail</label>
+            <input type="email" id="email" name="email" autocomplete="email" required
+                   placeholder="max@unternehmen.de">
+          </div>
+          <div class="feld">
+            <label for="unternehmen">Unternehmen</label>
+            <input type="text" id="unternehmen" name="unternehmen" autocomplete="organization"
+                   placeholder="Ihre Hausverwaltung GmbH">
+          </div>
+        </div>
+
+        <div class="feld">
+          <label for="nachricht">Nachricht</label>
+          <textarea id="nachricht" name="nachricht" required
+                    placeholder="Erzählen Sie uns von Ihrem Vorhaben..."></textarea>
+        </div>
+
+        <button type="submit" class="knopf knopf-mint">
+          Demo anfragen
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 12 3.269 3.125A59.769 59.769 0 0 1 21.485 12 59.768 59.768 0 0 1 3.27 20.875L5.999 12Zm0 0h7.5"/></svg>
+        </button>
+
+        <p class="kleingedruckt">
+          <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z"/></svg>
+          Ihre Daten werden DSGVO-konform verarbeitet.
+        </p>
+
+      </form>
+
+      <div class="meldung meldung-gut enthuellen" id="interesse-gut" hidden role="status">
+        <h3>Vielen Dank!</h3>
+        <p>Ihre Nachricht ist bei uns eingegangen. Wir melden uns in Kürze.</p>
+      </div>
+
+      <div class="meldung meldung-schlecht" id="interesse-schlecht" hidden role="alert">
+        <h3>Das hat nicht geklappt</h3>
+        <p>
+          Die Anmeldung konnte nicht übermittelt werden. Bitte versuchen Sie es noch einmal oder
+          schreiben Sie direkt an <a href="mailto:info@integramindsolutions.de">info@integramindsolutions.de</a>.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="fuss band">
+    <div class="innen">
+
+      <div class="fuss-marke">
+        <a class="marke" href="#">
+          <svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true">
+            <rect width="30" height="30" rx="8" fill="#0D9488"/>
+            <path d="M8 21V9h2.6l4.4 6.4L19.4 9H22v12h-2.4v-7.9L15.6 18h-1.2l-4-4.9V21H8Z" fill="#E9F4F1"/>
+          </svg>
+          ImmoMind
+        </a>
+        <p>Die zentrale digitale Infrastruktur für Immobilienverwaltung — ein System statt vieler Einzellösungen.</p>
+      </div>
+
+      <div class="fuss-spalte">
+        <h3>Produkt</h3>
+        <a href="#bereiche">Leistungsbereiche</a>
+        <a href="#agenten">KI-Agenten</a>
+        <a href="#wechsel">Wechsel</a>
+        <a href="#editionen">Editionen</a>
+      </div>
+
+      <div class="fuss-spalte">
+        <h3>Rechtliches</h3>
+        <a href="impressum/impressum.html">Impressum</a>
+        <a href="datenschutz/datenschutz.html">Datenschutz</a>
+        <a href="mailto:info@integramindsolutions.de">Kontakt</a>
+      </div>
+
+    </div>
+    <div class="fuss-unten">
+      <span>© 2026 IntegraMind Solutions GmbH</span>
+      <span>Daten in Deutschland · DSGVO-konform</span>
+    </div>
+  </footer>
+
+
+</main>
+
+<script>
+  const beobachter = new IntersectionObserver((eintraege) => {
+    for (const eintrag of eintraege) {
+      if (eintrag.isIntersecting) {
+        eintrag.target.classList.add("da");
+        beobachter.unobserve(eintrag.target);
+      }
+    }
+  }, { threshold: 0.1, rootMargin: "0px 0px -5% 0px" });
+
+  document.querySelectorAll(".enthuellen").forEach((el, i) => {
+    el.style.transitionDelay = (i % 2) * 0.1 + "s";
+    beobachter.observe(el);
+  });
+
+  const formular = document.getElementById("interesse-formular");
+  const gut      = document.getElementById("interesse-gut");
+  const schlecht = document.getElementById("interesse-schlecht");
+
+  formular.addEventListener("submit", async (ereignis) => {
+    ereignis.preventDefault();
+
+    const knopf = formular.querySelector("button[type=submit]");
+    const beschriftung = knopf.innerHTML;
+    knopf.disabled = true;
+    knopf.textContent = "Wird gesendet …";
+    schlecht.hidden = true;
+
+    try {
+      const antwort = await fetch(formular.action, {
+        method: "POST",
+        body: new FormData(formular),
+        headers: { Accept: "application/json" },
+      });
+
+      if (!antwort.ok) throw new Error("Formspree antwortete mit " + antwort.status);
+
+      formular.hidden = true;
+      gut.hidden = false;
+      gut.classList.add("da");
+      gut.scrollIntoView({ behavior: "smooth", block: "center" });
+    } catch (fehler) {
+      schlecht.hidden = false;
+      knopf.disabled = false;
+      knopf.innerHTML = beschriftung;
+    }
+  });
 </script>
-<script id="wp-emoji-settings" type="application/json">
-{"baseUrl":"https://s.w.org/images/core/emoji/17.0.2/72x72/","ext":".png","svgUrl":"https://s.w.org/images/core/emoji/17.0.2/svg/","svgExt":".svg","source":{"concatemoji":"https://immomind.io/wp-includes/js/wp-emoji-release.min.js?ver=6.9.1"}}
-</script>
-<script type="module">
-/*! This file is auto-generated */
-const a=JSON.parse(document.getElementById("wp-emoji-settings").textContent),o=(window._wpemojiSettings=a,"wpEmojiSettingsSupports"),s=["flag","emoji"];function i(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(o,JSON.stringify(t))}catch(e){}}function c(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data);e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0);const a=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data);return t.every((e,t)=>e===a[t])}function p(e,t){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var n=e.getImageData(16,16,1,1);for(let e=0;e<n.data.length;e++)if(0!==n.data[e])return!1;return!0}function u(e,t,n,a){switch(t){case"flag":return n(e,"\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f","\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f")?!1:!n(e,"\ud83c\udde8\ud83c\uddf6","\ud83c\udde8\u200b\ud83c\uddf6")&&!n(e,"\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f","\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f");case"emoji":return!a(e,"\ud83e\u1fac8")}return!1}function f(e,t,n,a){let r;const o=(r="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):document.createElement("canvas")).getContext("2d",{willReadFrequently:!0}),s=(o.textBaseline="top",o.font="600 32px Arial",{});return e.forEach(e=>{s[e]=t(o,e,n,a)}),s}function r(e){var t=document.createElement("script");t.src=e,t.defer=!0,document.head.appendChild(t)}a.supports={everything:!0,everythingExceptFlag:!0},new Promise(t=>{let n=function(){try{var e=JSON.parse(sessionStorage.getItem(o));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+f.toString()+"("+[JSON.stringify(s),u.toString(),c.toString(),p.toString()].join(",")+"));",a=new Blob([e],{type:"text/javascript"});const r=new Worker(URL.createObjectURL(a),{name:"wpTestEmojiSupports"});return void(r.onmessage=e=>{i(n=e.data),r.terminate(),t(n)})}catch(e){}i(n=f(s,u,c,p))}t(n)}).then(e=>{for(const n in e)a.supports[n]=e[n],a.supports.everything=a.supports.everything&&a.supports[n],"flag"!==n&&(a.supports.everythingExceptFlag=a.supports.everythingExceptFlag&&a.supports[n]);var t;a.supports.everythingExceptFlag=a.supports.everythingExceptFlag&&!a.supports.flag,a.supports.everything||((t=a.source||{}).concatemoji?r(t.concatemoji):t.wpemoji&&t.twemoji&&(r(t.twemoji),r(t.wpemoji)))});
-//# sourceURL=https://immomind.io/wp-includes/js/wp-emoji-loader.min.js
-</script>
+
 </body>
 </html>
