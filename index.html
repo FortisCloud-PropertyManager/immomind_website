@@ -3,16 +3,16 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>ImmoMind — Immobilienverwaltung in einem System</title>
-<meta name="description" content="ImmoMind bündelt Objektverwaltung, Buchhaltung, Vorgänge und Portal in einer Plattform — vollständig integriert, ohne Schnittstellen. KI-Agenten übernehmen die Zuarbeit. DSGVO-konform, Daten in Deutschland.">
+<title>ImmoMind — Autonomes Immobilienmanagement</title>
+<meta name="description" content="ImmoMind verbindet Immobilienverwaltung mit KI-Agenten, die Aufgaben erkennen, Entscheidungen vorbereiten und Prozesse selbstständig ausführen. Ein System für Objekte, Verträge, Finanzen, Technik und Kommunikation. DSGVO-konform, Daten in Deutschland.">
 <link rel="canonical" href="https://immomind.io/">
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="ImmoMind">
 <meta property="og:locale" content="de_DE">
 <meta property="og:url" content="https://immomind.io/">
-<meta property="og:title" content="ImmoMind — Immobilienverwaltung in einem System">
-<meta property="og:description" content="ImmoMind bündelt Objektverwaltung, Buchhaltung, Vorgänge und Portal in einer Plattform — vollständig integriert, ohne Schnittstellen. KI-Agenten übernehmen die Zuarbeit. DSGVO-konform, Daten in Deutschland.">
+<meta property="og:title" content="ImmoMind — Autonomes Immobilienmanagement">
+<meta property="og:description" content="ImmoMind verbindet Immobilienverwaltung mit KI-Agenten, die Aufgaben erkennen, Entscheidungen vorbereiten und Prozesse selbstständig ausführen. Ein System für Objekte, Verträge, Finanzen, Technik und Kommunikation. DSGVO-konform, Daten in Deutschland.">
 <meta property="og:image" content="https://immomind.io/icons/immomind-512x512.png">
 <meta name="twitter:card" content="summary">
 <meta name="theme-color" content="#05130F">
@@ -162,12 +162,17 @@ p { margin: 0; }
 .hero .innen {
   position: relative; z-index: 1;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 0.92fr);
+  grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
   gap: clamp(2.5rem, 6vw, 4.5rem);
   align-items: center;
 }
 
-.hero h1 { font-size: clamp(2.375rem, 5.1vw, 3.875rem); margin-block: 1.375rem 1.5rem; }
+.hero h1 {
+  font-size: clamp(1.875rem, 3.9vw, 3.125rem);
+  margin-block: 1.375rem 1.5rem;
+  hyphens: auto;
+  overflow-wrap: break-word;
+}
 
 .hero h1 .hervor {
   font-variant-numeric: tabular-nums;
@@ -303,7 +308,7 @@ p { margin: 0; }
 
 .ersatz-fuss { font-size: 0.9375rem; color: var(--text-weich); }
 
-.bereiche { background: var(--grund-2); padding-block: clamp(4rem, 9vw, 7rem); border-block: 1px solid rgba(255,255,255,0.05); }
+.bereiche { padding-block: clamp(4rem, 9vw, 7rem); }
 
 .abschnitt-kopf {
   display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
@@ -366,21 +371,24 @@ p { margin: 0; }
 .agenten { padding-block: clamp(4rem, 9vw, 7rem); }
 
 .agent-raster {
-  display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-  gap: 1px;
-  background: rgba(255,255,255,0.07);
-  border: 1px solid rgba(255,255,255,0.07);
-  border-radius: var(--radius);
-  overflow: hidden;
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(265px, 1fr));
+  gap: 1rem;
 }
 
 .agent {
-  background: var(--grund); padding: 1.5rem 1.375rem;
-  display: grid; gap: 0.625rem; align-content: start;
-  transition: background 0.22s;
+  background: linear-gradient(165deg, rgba(255,255,255,0.055), rgba(255,255,255,0.02));
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: var(--radius);
+  padding: 1.375rem;
+  display: grid; gap: 0.5625rem; align-content: start;
+  transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s;
 }
 
-.agent:hover { background: var(--grund-2); }
+.agent:hover {
+  border-color: var(--kante-hell);
+  transform: translateY(-2px);
+  box-shadow: 0 24px 50px -30px rgba(0,0,0,0.9), 0 0 40px -24px rgba(94,234,212,0.5);
+}
 
 .agent-symbol { color: var(--mint); }
 
@@ -406,10 +414,10 @@ p { margin: 0; }
 
 .wirkung p { font-size: 0.875rem; color: var(--text-weich); }
 
-.wechsel { background: var(--grund-2); padding-block: clamp(4rem, 9vw, 7rem); border-block: 1px solid rgba(255,255,255,0.05); }
+.wechsel { padding-block: clamp(4rem, 9vw, 7rem); }
 
 .schritte {
-  display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
   gap: 1.25rem; margin-bottom: 1.25rem;
 }
 
@@ -645,6 +653,7 @@ p { margin: 0; }
 
 @media (max-width: 880px) {
   .hero .innen, .abschnitt-kopf, .bereich-raster { grid-template-columns: minmax(0, 1fr); }
+  .befunde { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .abschnitt-kopf { align-items: start; }
   .kopf nav { display: none; }
   .kopf .innen { gap: 1rem; }
@@ -664,6 +673,141 @@ p { margin: 0; }
   .posten { grid-template-columns: 1fr auto; }
   .bereich { padding: 1.375rem; }
 }
+.dreiklang {
+  display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center;
+  margin-top: 1.5rem;
+  font-family: var(--mono); font-size: 0.6875rem; letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.dreiklang span {
+  color: var(--mint); border: 1px solid var(--kante);
+  background: rgba(94,234,212,0.07); border-radius: 999px; padding: 0.3125rem 0.75rem;
+}
+.dreiklang i { font-style: normal; color: var(--text-still); }
+
+.prozess {
+  background: var(--grund-2); padding-block: clamp(4rem, 9vw, 7rem);
+  border-block: 1px solid rgba(255,255,255,0.05);
+}
+
+.kette { max-width: 720px; margin-inline: auto; }
+
+.ausloeser {
+  display: grid; grid-template-columns: auto 1fr auto; gap: 0.875rem;
+  align-items: center; padding: 0.9375rem 1.25rem; font-size: 0.9375rem;
+}
+
+.kettenliste { list-style: none; margin: 1.25rem 0 0; padding: 0; }
+
+.glied {
+  position: relative;
+  display: grid; grid-template-columns: auto 1fr auto; gap: 1rem;
+  align-items: center; padding-block: 0.6875rem;
+}
+.glied::before {
+  content: ""; position: absolute; left: 11px; top: 0; bottom: 0;
+  width: 2px; background: var(--kante);
+}
+.glied:first-child::before { top: 50%; }
+.glied:last-child::before  { bottom: 50%; }
+
+.knoten {
+  position: relative; z-index: 1;
+  width: 24px; height: 24px; border-radius: 50%;
+  display: grid; place-items: center;
+  background: var(--grund-2); border: 1px solid var(--kante-hell);
+  font-family: var(--mono); font-size: 0.625rem; color: var(--mint);
+  font-variant-numeric: tabular-nums;
+}
+.glied[data-akteur="mensch"] .knoten {
+  border-color: rgba(251,191,36,0.5); color: var(--bernstein);
+  background: rgba(251,191,36,0.12);
+}
+
+.glied-name { font-size: 0.9375rem; }
+.glied[data-akteur="mensch"] .glied-name { font-weight: 500; }
+
+.akteur {
+  font-family: var(--mono); font-size: 0.625rem; letter-spacing: 0.1em;
+  text-transform: uppercase; white-space: nowrap;
+  color: var(--mint); opacity: 0.7;
+}
+.glied[data-akteur="mensch"] .akteur { color: var(--bernstein); opacity: 1; }
+
+.kettenschluss {
+  margin-top: 1.5rem; padding: 1.125rem 1.375rem;
+  border: 1px solid var(--kante-hell); border-radius: var(--radius);
+  background: linear-gradient(100deg, rgba(94,234,212,0.12), rgba(94,234,212,0.03));
+  font-family: var(--display); font-weight: 600; font-size: 1.0625rem;
+  letter-spacing: -0.02em; color: var(--mint); text-align: center;
+}
+
+.spotlight {
+  background: var(--grund-2); padding-block: clamp(4rem, 9vw, 7rem);
+  border-block: 1px solid rgba(255,255,255,0.05);
+}
+
+.befunde {
+  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.befund {
+  border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius);
+  padding: 1.25rem 1.375rem; display: grid; gap: 0.5rem; align-content: start;
+  background: linear-gradient(165deg, rgba(255,255,255,0.05), rgba(255,255,255,0.018));
+}
+.befund .art {
+  font-family: var(--mono); font-size: 0.625rem; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--mint);
+}
+.befund[data-art="frist"] .art { color: var(--bernstein); }
+.befund p { font-size: 1rem; font-weight: 500; letter-spacing: -0.012em; }
+
+.vergleich {
+  background: var(--grund-2); padding-block: clamp(4rem, 9vw, 7rem);
+  border-block: 1px solid rgba(255,255,255,0.05);
+}
+
+.gegenueber {
+  max-width: 840px; margin-inline: auto;
+  border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.gegen-zeile { display: grid; grid-template-columns: 1fr 1fr; }
+
+.gegen-zeile > * { padding: 0.8125rem 1.25rem; font-size: 0.9375rem; }
+.gegen-zeile + .gegen-zeile > * { border-top: 1px solid rgba(255,255,255,0.06); }
+
+.gegen-zeile .alt { color: var(--text-weich); }
+.gegen-zeile .neu { color: var(--text); font-weight: 500; background: rgba(94,234,212,0.045); }
+
+.gegen-zeile.kopf > * {
+  font-family: var(--mono); font-size: 0.6875rem; letter-spacing: 0.14em;
+  text-transform: uppercase; font-weight: 500;
+}
+.gegen-zeile.kopf .alt { color: var(--text-still); }
+.gegen-zeile.kopf .neu { color: var(--mint); background: rgba(94,234,212,0.09); }
+
+.kernaussage {
+  max-width: 840px; margin: 2rem auto 0; text-align: center;
+  font-family: var(--display); font-weight: 700;
+  font-size: clamp(1.25rem, 2.6vw, 1.75rem); letter-spacing: -0.03em;
+}
+.kernaussage span { color: var(--mint); }
+
+@media (max-width: 520px) {
+  .ausloeser { grid-template-columns: auto 1fr; row-gap: 0.25rem; }
+  .ausloeser .uhr { grid-column: 2; }
+  .glied { grid-template-columns: auto 1fr; row-gap: 0.125rem; }
+  .glied .akteur { grid-column: 2; }
+  .befunde { grid-template-columns: minmax(0, 1fr); }
+  .gegen-zeile { grid-template-columns: minmax(0, 1fr); }
+  .gegen-zeile + .gegen-zeile .alt { border-top: 1px solid rgba(255,255,255,0.06); }
+  .gegen-zeile .neu { border-top: none; }
+}
+
 </style>
 </head>
 <body>
@@ -677,10 +821,10 @@ p { margin: 0; }
       ImmoMind
     </a>
     <nav>
-      <a href="#bereiche">Leistungsbereiche</a>
+      <a href="#prozess">Wie es arbeitet</a>
       <a href="#agenten">KI-Agenten</a>
+      <a href="#bereiche">Leistungsbereiche</a>
       <a href="#wechsel">Wechsel</a>
-      <a href="#editionen">Editionen</a>
       <a href="#interesse">Warteliste</a>
     </nav>
     <a class="knopf knopf-mint" href="#interesse">Demo anfragen</a>
@@ -693,13 +837,15 @@ p { margin: 0; }
     <div class="innen">
 
       <div class="hero-inhalt">
-        <p class="eyebrow">KI-gestützte Immobilienverwaltung</p>
-        <h1>Aus sieben Systemen wird <span class="hervor">eines</span>.</h1>
+        <p class="eyebrow">Autonomes Immobilienmanagement</p>
+        <h1>Aus Immobilienverwaltung wird <span class="hervor">autonomes</span> Immobilienmanagement.</h1>
         <p class="hero-text">
-          ImmoMind bündelt Objektverwaltung, Buchhaltung, Vorgänge und Portal in einer
-          Plattform — vollständig integriert, ohne Schnittstellen und ohne doppelte
-          Datenhaltung. Eine Oberfläche für Ihr ganzes Team.
+          ImmoMind verbindet Immobilienverwaltung mit KI-Agenten, die Aufgaben erkennen,
+          Entscheidungen vorbereiten und Prozesse selbstständig ausführen. Ein System für
+          Objekte, Verträge, Finanzen, Technik und Kommunikation — mit KI, die nicht nur
+          unterstützt, sondern mitarbeitet.
         </p>
+        <p class="dreiklang"><span>Verstehen</span><i>→</i><span>Entscheiden</span><i>→</i><span>Handeln</span></p>
         <div class="hero-aktionen">
           <a class="knopf knopf-mint" href="#interesse">Demo anfragen</a>
           <a class="knopf knopf-glas" href="#bereiche">Leistungsbereiche ansehen</a>
@@ -744,9 +890,234 @@ p { margin: 0; }
             <span>Ein Vertrag</span>
             <span>Ein Login</span>
           </div>
-          <p class="ersatz-fuss">Keine Schnittstellen, keine doppelte Datenhaltung, kein Medienbruch.</p>
+          <p class="ersatz-fuss"><strong>Aus sieben Systemen wird eines.</strong> Keine Schnittstellen,
+          keine doppelte Datenhaltung, kein Medienbruch.</p>
         </div>
 
+      </div>
+
+    </div>
+  </section>
+
+  <section class="prozess band" id="prozess">
+    <div class="innen">
+
+      <div class="abschnitt-kopf enthuellen">
+        <div>
+          <p class="eyebrow">Von der Aufgabe bis zur Erledigung</p>
+          <h2>Ein Wasserschaden, elf Schritte, eine Entscheidung</h2>
+        </div>
+        <p>
+          Klassische Software zeigt Ihnen die Meldung. ImmoMind führt den Vorgang durch —
+          und legt Ihnen nur die Stelle vor, an der wirklich jemand entscheiden muss.
+        </p>
+      </div>
+
+      <div class="kette enthuellen">
+
+        <div class="glas ausloeser">
+          <span class="kanal">E-Mail</span>
+          <span class="eingang-text"><strong>„Im Bad der WE 07 steht Wasser."</strong></span>
+          <span class="uhr">08:12</span>
+        </div>
+
+        <ol class="kettenliste">
+          <li class="glied" data-akteur="ki">
+            <span class="knoten">01</span>
+            <span class="glied-name">Vorgang erstellen</span>
+            <span class="akteur">ImmoMind</span>
+          </li>
+          <li class="glied" data-akteur="ki">
+            <span class="knoten">02</span>
+            <span class="glied-name">Dringlichkeit bewerten</span>
+            <span class="akteur">ImmoMind</span>
+          </li>
+          <li class="glied" data-akteur="ki">
+            <span class="knoten">03</span>
+            <span class="glied-name">Dienstleister auswählen</span>
+            <span class="akteur">ImmoMind</span>
+          </li>
+          <li class="glied" data-akteur="ki">
+            <span class="knoten">04</span>
+            <span class="glied-name">Angebote einholen & vergleichen</span>
+            <span class="akteur">ImmoMind</span>
+          </li>
+          <li class="glied" data-akteur="mensch">
+            <span class="knoten">05</span>
+            <span class="glied-name">Freigabe</span>
+            <span class="akteur">Sie entscheiden</span>
+          </li>
+          <li class="glied" data-akteur="ki">
+            <span class="knoten">06</span>
+            <span class="glied-name">Auftrag erteilen</span>
+            <span class="akteur">ImmoMind</span>
+          </li>
+          <li class="glied" data-akteur="ki">
+            <span class="knoten">07</span>
+            <span class="glied-name">Termin koordinieren</span>
+            <span class="akteur">ImmoMind</span>
+          </li>
+          <li class="glied" data-akteur="ki">
+            <span class="knoten">08</span>
+            <span class="glied-name">Mieter informieren</span>
+            <span class="akteur">ImmoMind</span>
+          </li>
+          <li class="glied" data-akteur="ki">
+            <span class="knoten">09</span>
+            <span class="glied-name">Durchführung überwachen</span>
+            <span class="akteur">ImmoMind</span>
+          </li>
+          <li class="glied" data-akteur="ki">
+            <span class="knoten">10</span>
+            <span class="glied-name">Rechnung prüfen</span>
+            <span class="akteur">ImmoMind</span>
+          </li>
+          <li class="glied" data-akteur="ki">
+            <span class="knoten">11</span>
+            <span class="glied-name">Vorgang abschließen</span>
+            <span class="akteur">ImmoMind</span>
+          </li>
+        </ol>
+
+        <p class="kettenschluss">Aus einer E-Mail wird ein vollständig gesteuerter Prozess.</p>
+
+      </div>
+
+    </div>
+  </section>
+
+  <section class="agenten band" id="agenten">
+    <div class="innen">
+
+            <div class="abschnitt-kopf enthuellen">
+        <div>
+          <p class="eyebrow">KI als Produktivitätsmotor</p>
+          <h2>Sieben Agenten, die mitarbeiten</h2>
+        </div>
+        <p>
+          Durchgängige Automatisierung vom ersten Mieterkontakt bis zur Jahresabrechnung.
+          Jeder Agent deckt einen eigenen Zuständigkeitsbereich ab — das Team behält die
+          Entscheidungen.
+        </p>
+      </div>
+
+      <div class="agent-raster enthuellen">
+
+        <article class="agent">
+          <span class="agent-symbol">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M3 5.5h14v9H3zM3 6l7 5 7-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          <h3>Communication Agent</h3>
+          <p>Kommunikation verstehen, Anliegen erkennen und Prozesse anstoßen.</p>
+        </article>
+
+        <article class="agent">
+          <span class="agent-symbol">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M3 17V7.5L10 3l7 4.5V17M3 17h14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="10" cy="11.5" r="2.2" stroke="currentColor" stroke-width="1.5"/></svg>
+          </span>
+          <h3>Property Monitoring Agent</h3>
+          <p>Objekte, Verträge, Fristen und Vorgänge überwachen und Handlungsbedarf erkennen.</p>
+        </article>
+
+        <article class="agent">
+          <span class="agent-symbol">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 3h6l4 4v10H5z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M11 3v4h4M7.5 11h5M7.5 13.5h3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </span>
+          <h3>Document Agent</h3>
+          <p>Dokumente verstehen, Informationen extrahieren und automatisch zuordnen.</p>
+        </article>
+
+        <article class="agent">
+          <span class="agent-symbol">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 4h12v12H4z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M7 7.5h6M7 10.5h6M7 13h3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </span>
+          <h3>Finance Agent</h3>
+          <p>Rechnungen, Zahlungen und Buchungsvorgänge verarbeiten und Auffälligkeiten erkennen.</p>
+        </article>
+
+        <article class="agent">
+          <span class="agent-symbol">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M3 16.5v-3a3 3 0 0 1 3-3h4M13 7.5 16.5 11 13 14.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="7" cy="5.5" r="2.2" stroke="currentColor" stroke-width="1.5"/></svg>
+          </span>
+          <h3>Rental Agent</h3>
+          <p>Vermietungsprozesse von der Kündigung bis zur Neuvermietung unterstützen.</p>
+        </article>
+
+        <article class="agent">
+          <span class="agent-symbol">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M12.5 3.5a3.5 3.5 0 0 0-3.2 4.9L3.5 14.2v2.3h2.3l5.8-5.8a3.5 3.5 0 1 0 1-7.2Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          <h3>Maintenance Agent</h3>
+          <p>Schäden, Wartungen, Dienstleister und Instandhaltungsmaßnahmen steuern.</p>
+        </article>
+
+        <article class="agent">
+          <span class="agent-symbol">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 3h10v14H5z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M8 7h4M8 10h4M8 13h2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </span>
+          <h3>Contract Agent</h3>
+          <p>Verträge überwachen und Optimierungs-, Einsparungs- und Ertragspotenziale erkennen.</p>
+        </article>
+
+      </div>
+
+      <div class="wirkung enthuellen">
+        <div>
+          <h3>Zeitersparnis</h3>
+          <p>Automatisierung repetitiver Aufgaben spart Stunden pro Verwalter und Tag.</p>
+        </div>
+        <div>
+          <h3>Weniger Fehler</h3>
+          <p>KI-gestützte Qualitätssicherung reduziert manuelle Fehler deutlich.</p>
+        </div>
+        <div>
+          <h3>Schnellere Reaktion</h3>
+          <p>Echtzeit-Bearbeitung verbessert den Service für Mieter und Eigentümer.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="spotlight band" id="optimierung">
+    <div class="innen">
+
+      <div class="abschnitt-kopf enthuellen">
+        <div>
+          <p class="eyebrow">Contract Agent</p>
+          <h2>ImmoMind optimiert Ihren Immobilienbestand</h2>
+        </div>
+        <p>
+          ImmoMind überwacht Verträge nicht nur — die KI sucht aktiv nach Möglichkeiten,
+          Erträge zu erhöhen und Kosten zu senken, und legt Ihnen die Befunde vor.
+        </p>
+      </div>
+
+      <div class="befunde enthuellen">
+        <article class="befund" data-art="chance">
+          <span class="art">Ertrag</span>
+          <p>Mieterhöhung möglich</p>
+        </article>
+        <article class="befund" data-art="frist">
+          <span class="art">Frist</span>
+          <p>Indexanpassung fällig</p>
+        </article>
+        <article class="befund" data-art="chance">
+          <span class="art">Kosten</span>
+          <p>Versicherung zu teuer</p>
+        </article>
+        <article class="befund" data-art="chance">
+          <span class="art">Kosten</span>
+          <p>Günstigerer Versorger verfügbar</p>
+        </article>
+        <article class="befund" data-art="frist">
+          <span class="art">Frist</span>
+          <p>Wartungsvertrag läuft aus</p>
+        </article>
+        <article class="befund" data-art="chance">
+          <span class="art">Kosten</span>
+          <p>Dienstleisterangebot über Marktniveau</p>
+        </article>
       </div>
 
     </div>
@@ -781,8 +1152,10 @@ p { margin: 0; }
             <li><span class="tupfen"></span>Zählermanagement mit Foto-Erfassung</li>
             <li><span class="tupfen"></span>Mieterverwaltung</li>
             <li><span class="tupfen"></span>Verträge: Miete, Kündigungen, Verlängerungen</li>
+            <li><span class="tupfen"></span>Mieterhöhungen und Indexanpassungen</li>
+            <li><span class="tupfen"></span>Vertragsfristen und Vertragsoptimierung</li>
+            <li><span class="tupfen"></span>Markt- und Anbietervergleiche</li>
             <li><span class="tupfen"></span>Dokumentenmanagement mit Checklisten</li>
-            <li><span class="tupfen"></span>Fristen- und Statusüberwachung</li>
           </ul>
         </article>
 
@@ -796,12 +1169,13 @@ p { margin: 0; }
           <h3>Finanz- &amp; Rechnungswesen</h3>
           <p class="ersetzt">Ersetzt Banking &amp; Buchhaltung</p>
           <ul>
+            <li><span class="tupfen"></span>Bankanbindung und eBanking</li>
             <li><span class="tupfen"></span>Mietbuchhaltung und Zahlungseingänge</li>
+            <li><span class="tupfen"></span>Rechnungsprüfung mit automatischer Zuordnung</li>
             <li><span class="tupfen"></span>Mahnwesen</li>
-            <li><span class="tupfen"></span>Nebenkostenabrechnung</li>
-            <li><span class="tupfen"></span>Einnahmen- und Ausgabenverwaltung</li>
+            <li><span class="tupfen"></span>Nebenkostenabrechnung mit flexiblen Umlageschlüsseln</li>
             <li><span class="tupfen"></span>Reporting: Cashflow, Rendite, Leerstand</li>
-            <li><span class="tupfen"></span>DATEV-Export und eBanking</li>
+            <li><span class="tupfen"></span>DATEV-Export</li>
           </ul>
         </article>
 
@@ -814,11 +1188,12 @@ p { margin: 0; }
           <h3>Technik &amp; Betrieb</h3>
           <p class="ersetzt">Ersetzt Ticketsystem · Schlüsselverwaltung</p>
           <ul>
-            <li><span class="tupfen"></span>Schadensmeldungen und Ticket-System</li>
-            <li><span class="tupfen"></span>Instandhaltungs- und Wartungsplanung</li>
+            <li><span class="tupfen"></span>Schadensmanagement und Ticket-System</li>
+            <li><span class="tupfen"></span>Wartungsüberwachung und Instandhaltungsplanung</li>
+            <li><span class="tupfen"></span>Angebotsanfrage und Angebotsvergleich</li>
+            <li><span class="tupfen"></span>Beauftragung und Nachverfolgung</li>
             <li><span class="tupfen"></span>Dienstleistersteuerung</li>
             <li><span class="tupfen"></span>Schließanlagen, Zylinder und Schlüsselschränke</li>
-            <li><span class="tupfen"></span>Kostenkontrolle bei Reparaturen</li>
             <li><span class="tupfen"></span>Aufgaben- und Vorgangsmanagement</li>
           </ul>
         </article>
@@ -835,7 +1210,8 @@ p { margin: 0; }
           <ul>
             <li><span class="tupfen"></span>Portal für Mieter, Eigentümer und Handwerker</li>
             <li><span class="tupfen"></span>Nachrichten über E-Mail, WhatsApp und weitere Kanäle</li>
-            <li><span class="tupfen"></span>Schadensmeldung, Zählerstände und Termine online</li>
+            <li><span class="tupfen"></span>Vorlagen, Briefpapier und individuelle Schreiben</li>
+            <li><span class="tupfen"></span>Serien- und Sammelanschreiben</li>
             <li><span class="tupfen"></span>Steuerunterlagen und Nebenkosten zum Abruf</li>
             <li><span class="tupfen"></span>Rollen- und Rechtemanagement</li>
             <li><span class="tupfen"></span>Portfolioanalyse und KPI-Dashboards</li>
@@ -847,78 +1223,52 @@ p { margin: 0; }
     </div>
   </section>
 
-  <section class="agenten band" id="agenten">
+  <section class="vergleich band" id="vergleich">
     <div class="innen">
 
       <div class="abschnitt-kopf enthuellen">
         <div>
-          <p class="eyebrow">KI als Produktivitätsmotor</p>
-          <h2>Fünf Agenten, die mitarbeiten</h2>
+          <p class="eyebrow">Der Unterschied</p>
+          <h2>Verwalten oder mitarbeiten</h2>
         </div>
         <p>
-          Durchgängige Automatisierung vom ersten Mieterkontakt bis zur Jahresabrechnung.
-          Die Agenten übernehmen die Zuarbeit, das Team behält die Entscheidungen.
+          Klassische Hausverwaltungssoftware bildet ab, was passiert ist. ImmoMind
+          bearbeitet, was zu tun ist.
         </p>
       </div>
 
-      <div class="agent-raster enthuellen">
-
-        <article class="agent">
-          <span class="agent-symbol">
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M3 5.5h14v9H3zM3 6l7 5 7-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </span>
-          <h3>Analyse der Eingangspost</h3>
-          <p>Eingehende Nachrichten über alle Kanäle werden automatisch geprüft und für die Bearbeitung vorqualifiziert.</p>
-        </article>
-
-        <article class="agent">
-          <span class="agent-symbol">
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 3h6l4 4v10H5z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M11 3v4h4M7.5 11h5M7.5 13.5h3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-          </span>
-          <h3>Dokumentenanalyse</h3>
-          <p>Dokumenttypen werden erkannt, zugeordnet und die relevanten Metadaten extrahiert.</p>
-        </article>
-
-        <article class="agent">
-          <span class="agent-symbol">
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="8.5" cy="7" r="3" stroke="currentColor" stroke-width="1.5"/><path d="M3 16c0-2.5 2.5-4 5.5-4M13 13.5l1.5 1.5L17.5 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </span>
-          <h3>Bewerbercheck</h3>
-          <p>Interessenten bei Neuvermietung werden anhand von Dokumenten und Bonitätsmerkmalen vorgeprüft.</p>
-        </article>
-
-        <article class="agent">
-          <span class="agent-symbol">
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 4h12v12H4z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M7 7.5h6M7 10.5h6M7 13h3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-          </span>
-          <h3>Buchungsassistent</h3>
-          <p>Belege werden automatisiert verbucht und kontiert — das Buchhaltungsteam prüft nur noch.</p>
-        </article>
-
-        <article class="agent">
-          <span class="agent-symbol">
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M3 10h14M13 6l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M7 5.5 3 10l4 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </span>
-          <h3>E-Banking-Abgleich</h3>
-          <p>Zahlungseingänge werden automatisch gegen offene Posten abgeglichen.</p>
-        </article>
-
-      </div>
-
-      <div class="wirkung enthuellen">
-        <div>
-          <h3>Zeitersparnis</h3>
-          <p>Automatisierung repetitiver Aufgaben spart Stunden pro Verwalter und Tag.</p>
+      <div class="gegenueber enthuellen">
+        <div class="gegen-zeile kopf">
+          <div class="alt">Klassische Software</div>
+          <div class="neu">ImmoMind</div>
         </div>
-        <div>
-          <h3>Weniger Fehler</h3>
-          <p>KI-gestützte Qualitätssicherung reduziert manuelle Fehler deutlich.</p>
+        <div class="gegen-zeile">
+          <div class="alt">Daten verwalten</div>
+          <div class="neu">Daten verstehen</div>
         </div>
-        <div>
-          <h3>Schnellere Reaktion</h3>
-          <p>Echtzeit-Bearbeitung verbessert den Service für Mieter und Eigentümer.</p>
+        <div class="gegen-zeile">
+          <div class="alt">Aufgaben anzeigen</div>
+          <div class="neu">Aufgaben erkennen</div>
+        </div>
+        <div class="gegen-zeile">
+          <div class="alt">Prozesse auslösen</div>
+          <div class="neu">Prozesse durchführen</div>
+        </div>
+        <div class="gegen-zeile">
+          <div class="alt">Kommunikation ermöglichen</div>
+          <div class="neu">Kommunikation übernehmen</div>
+        </div>
+        <div class="gegen-zeile">
+          <div class="alt">Verträge speichern</div>
+          <div class="neu">Verträge analysieren</div>
+        </div>
+        <div class="gegen-zeile">
+          <div class="alt">Reports erstellen</div>
+          <div class="neu">Auffälligkeiten erkennen</div>
         </div>
       </div>
+
+      <p class="kernaussage enthuellen">Software, die nicht nur verwaltet, sondern <span>mitarbeitet</span>.</p>
 
     </div>
   </section>
@@ -933,8 +1283,9 @@ p { margin: 0; }
         </div>
         <p>
           ImmoMind ist sofort startklar — kein aufwändiges Setup, kein IT-Projekt,
-          keine Beratertage. Und wenn Sie möchten, übernimmt unser Team die
-          Datenmigration komplett für Sie.
+          keine Beratertage. Die KI prüft die übernommenen Daten auf Vollständigkeit und
+          Plausibilität, bevor Sie freigeben. Und wenn Sie möchten, übernimmt unser Team
+          die Migration komplett für Sie.
         </p>
       </div>
 
@@ -942,20 +1293,38 @@ p { margin: 0; }
 
         <article class="schritt">
           <span class="schritt-nr">Schritt 1</span>
-          <h3>Daten exportieren</h3>
+          <h3>Export</h3>
           <p>Aus Excel, CSV oder Ihrem bisherigen System. Wir sagen Ihnen vorher genau, welche Felder wir brauchen.</p>
         </article>
 
         <article class="schritt">
           <span class="schritt-nr">Schritt 2</span>
-          <h3>Import prüfen</h3>
-          <p>Objekte, Einheiten, Verträge und Kontakte landen strukturiert im System. Sie sehen vor der Freigabe, was angekommen ist.</p>
+          <h3>Mapping</h3>
+          <p>Ihre Felder werden auf die ImmoMind-Struktur gelegt — Objekte, Einheiten, Verträge, Kontakte.</p>
         </article>
 
         <article class="schritt">
           <span class="schritt-nr">Schritt 3</span>
-          <h3>Loslegen</h3>
-          <p>Kein IT-Wissen nötig. Ihr Team arbeitet ab dem ersten Tag im neuen System — die Altsysteme können abgeschaltet werden.</p>
+          <h3>Import</h3>
+          <p>Die Daten laufen in Ihre Umgebung ein, noch ohne Wirkung auf den Betrieb.</p>
+        </article>
+
+        <article class="schritt">
+          <span class="schritt-nr">Schritt 4</span>
+          <h3>KI-Qualitätsprüfung</h3>
+          <p>Die KI prüft auf Vollständigkeit, Plausibilität und Fehler und meldet, was nicht zusammenpasst.</p>
+        </article>
+
+        <article class="schritt">
+          <span class="schritt-nr">Schritt 5</span>
+          <h3>Freigabe</h3>
+          <p>Sie sehen den geprüften Stand und geben ihn frei. Nichts geht ohne Ihre Bestätigung live.</p>
+        </article>
+
+        <article class="schritt">
+          <span class="schritt-nr">Schritt 6</span>
+          <h3>Start</h3>
+          <p>Kein IT-Wissen nötig. Ihr Team arbeitet ab dem ersten Tag im neuen System.</p>
         </article>
 
       </div>
@@ -1112,6 +1481,9 @@ p { margin: 0; }
     </div>
   </section>
 
+
+</main>
+
   <footer class="fuss band">
     <div class="innen">
 
@@ -1148,8 +1520,6 @@ p { margin: 0; }
     </div>
   </footer>
 
-
-</main>
 
 <script>
   const beobachter = new IntersectionObserver((eintraege) => {
